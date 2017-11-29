@@ -1,0 +1,80 @@
+<div class="page-apply">
+    <div class="container">
+        <div class="apply-panel">
+            <div class="apply-header">
+                <a class="pull-left" href="#/home"><img src="images/in_logo.png" alt="logo"></a>
+                <i class="pull-left"></i><span class="pull-left">注册</span>
+            </div>
+            <div ng-if="!success">
+                <div class="title" >
+                    <h4>注册</h4>
+                    <p class="text-muted small">您需要填写以下资料，请务必提供真实数据，带星号的为必填项。</p>
+                </div>
+                <form role="form" name="applyForm" class="form-horizontal" ng-submit="apply()" novalidate>
+                    <!-- 必填部分 -->
+                    <div class="form-group">
+                        <label for="inputCompany" class="control-label">公司名称<i class="required-state is-required">*</i></label>
+                        <input ng-change="resetError()" class="form-control" ng-model="company.name" type="text" required placeholder="2－20个字符" >
+                    </div>
+                    <div class="form-group">
+                        <label  class="control-label">公司所在地<i class="required-state is-required">*</i></label> 
+                        <select class="form-control pull-left" ng-model="user.province" ng-options="address.name for address in addresses" ng-change="user.city = null">
+                            <option value="">省份</option>
+                        </select> 
+                        <select class="form-control pull-left" ng-model="user.city" ng-options="city.name for city in user.province.citys">
+                            <option value="">城市</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="pull-left control-label">联系人姓名<i class="required-state is-required">*</i></label>
+                        <input ng-change="resetError()" class="form-control" ng-model="company.contact" type="text"  required placeholder="2－50个字符" >
+                    </div>
+                    <div class="form-group">
+                        <label class="pull-left control-label ">手机号码<i class="required-state is-required">*</i></label>
+                        <input ng-change="resetError()" class="form-control" ng-model="company.tel" type="text"  required placeholder="请输入11位手机号码" >
+                    </div>
+                    <div class="form-group">
+                        <label class="pull-left control-label ">密码<i class="required-state is-required">*</i></label>
+                        <input ng-change="resetError()" class="form-control" type="password" ng-model="company.password" name="password" required placeholder="您设定的密码6-20位" > 
+                    </div>
+                    <div class="form-group" >
+                        <label class="pull-left control-label ">确认密码<i class="required-state is-required">*</i></label>
+                        <input ng-change="resetError()" class="form-control" type="password" 
+                        ng-model="check.repeatPassword" name="passwordConfirm" required placeholder="请再次输入密码">
+                    </div>
+
+                    <!-- 可选填写部分 -->
+                    <div class="form-group">
+                        <label class="pull-left control-label">公司规模<i class="required-state">*</i></label>
+                        <select class="form-control staffsize pull-left" ng-model="company.staffsize" ng-options="staffsize.id as staffsize.name for staffsize in staffsizes">
+                            <option value="">请选择公司规模</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="pull-left control-label">联系人邮箱<i class="required-state">*</i></label>
+                        <input ng-change="resetError()" class="form-control" ng-model="company.email" type="text" placeholder="您的邮箱" >
+                    </div>
+
+                    <!-- 用户协议，提交 -->
+                    <div class="checkbox agreement">
+                        <label class="text-muted small">
+                            <input ng-change="resetError()" type="checkbox" name="check" ng-model="check.agreement" required>
+                            我已经认真阅读并同意{{logoName}}的<a target="_blank" href="#/protocol">《用户协议》</a>
+                        </label>
+                    </div>
+                    <div class="alert alert-danger ng-class:{'hidden':!errorMessage}">{{errorMessage}}</div>
+                    <button type="submit" class="btn btn-success" title="阅读并同意{{logoName}}的《使用协议》方可注册。" ng-disabled="waiting">提交申请</button>
+                    <img class="waiting-gif ng-class:{'hidden':!waiting}" src="images/waiting.gif" alt="提交中"/>                   
+                </form>
+            </div>
+            <div ng-if="success" class="success">
+                <div class="center-image" >
+                    <img  src="images/apply_success.png"/>
+                </div>
+                
+                <p class="center-block signup-success">注册成功，您现在可以<a href="{{host}}/ems">登录</a>并管理您的企业信息。</p>          
+                <a href="#/home" class="btn center-block">返回首页</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="header clearfix">
+    <a href="#/home"><img class="logo pull-left" alt="logo" src="images/logo.png" /></a>
+    <ul class="nav nav-pills pull-left">
+        <li ng-class="{ active: isActive('/home')}"><a href="#/home" ng-click="setActive('/home')" >首页</a></li>
+        <li ng-class="{ active: isActive('/function')}"><a href="#/function" ng-click= "setActive('/function')"  >功能</a> </li>
+        <li ng-class="{ active: isActive('/download')}"><a href="#/download" ng-click= "setActive('/download')" >下载</a></li>
+        <li ng-class="{ active: isActive('/help')}"><a href="#/contact" ng-click = "setActive('/help')">帮助</a></li>
+        <li class=""><a href="http://yiqiapp.cn/blog"  >博客</a></li>
+        <li class=""><a href="http://yiqiapp.cn/talk"  >网页版</a></li>
+        <li class=""><a href="http://yiqiapp.cn/tc"  >{{logoName}}会议</a></li>
+        <li ng-class="{ active: isActive('/blog')}" class="hidden"><a href="#/blog" ng-click= "mainActive('/blog')" >博客</a></li>
+    </ul>
+    <div class="login pull-right">
+    	<a ng-href="http://yiqiapp.cn/ems">企业登录</a>
+    	<a href="#/apply" class="last-a">企业注册</a>
+    </div>
+</div>
+<div class="line"></div>

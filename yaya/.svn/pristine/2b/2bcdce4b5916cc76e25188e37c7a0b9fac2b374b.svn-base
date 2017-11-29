@@ -1,0 +1,494 @@
+<div class="page-help">
+	<div class="contain ">
+		<div class="border clearfix">
+			<div class="help-left pull-left">
+				<ul class="nav nav-pills nav-stacked role="tablist>
+					<li ng-class="{'active': activeTab === 'contact'}" >
+						<a class="clearfix" role="tab" href="#/contact">
+							<img class="pull-left" ng-class="{hidden:activeTab === 'contact'}" src="images/help_contact_icon_gray.png"/>
+							<img class="pull-left" ng-class="{hidden:activeTab !== 'contact'}" src="images/help_contact_icon.png"/>
+							<span class="pull-left">关于我们</span>
+						</a>
+					</li>
+					<li ng-class="{'active': activeTab === 'help'}">
+						<a class="clearfix" role="tab" href="#/help" >
+							<img class="pull-left" ng-class="{hidden:activeTab === 'help'}" src="images/help_guide_icon_gray.png"/>
+							<img class="pull-left" ng-class="{hidden:activeTab !== 'help'}"  src="images/help_guide_icon.png"/>
+							<span class="pull-left">使用指南</span>
+						</a>
+					</li>
+					<li ng-class="{'active': activeTab === 'qa'}">
+						<a class="clearfix" role="tab" href="#/qa">
+							<img class="pull-left" ng-class="{hidden:activeTab === 'qa'}"  src="images/help_question_icon_gray.png"/>
+							<img class="pull-left" ng-class="{hidden:activeTab !== 'qa'}"  src="images/help_question_icon.png"/>
+							<span class="pull-left">常见问题</span>
+						</a>
+					</li>
+					<li ng-class="{'active': activeTab === 'protocol'}">
+						<a class="clearfix" role="tab" href="#/protocol">
+							<img class="pull-left" ng-class="{hidden:activeTab === 'protocol'}"  src="images/help_protocol_icon_gray.png"/>
+							<img class="pull-left" ng-class="{hidden:activeTab !== 'protocol'}"  src="images/help_protocol_icon.png"/>
+							<span class="pull-left">用户协议</span>
+						</a>
+					</li>			
+				</ul>
+			</div>
+			<div class="help-right pull-left tab-content">
+				<div class="tab-pane" ng-class="{'active': activeTab === 'help'}" id="help">
+			
+					<div class="pannel">
+						<div class="number pull-left">1</div>
+						
+						<h5>产品介绍</h5>
+						<p class="text-muted">1.1 产品价值</p>
+						
+							<p class="text-muted text">「{{logoName}}」专注任务管理、连通即时消息、企业通讯录、邮箱，为你提供一体化移动办公解决方案，帮助团队降低沟通成本，提高办公效率。</p>
+							<p class="text-muted text">「{{logoName}}」高效的协同办公。为您的企业构筑一个高效、安全的移动办公环境，打破固有工作空间的局限，随时随地，协同式工作网络体系快速铺展。任务管理、即时消息、邮箱服务、公告通知，各类信息流集于一体，将工作指令快捷传递。</p>
+							<p class="text-muted text">「{{logoName}}」良好的用户体验。开启全新移动办公时代的绝佳体验，智能终端便捷操作，快速响应，移动沟通，畅快自由。尽取所需，尽情部署，带给员工良好的信息化体验。</p>
+							<p class="text-muted text">「{{logoName}}」低廉的沟通成本。快捷的即时消息、周全的邮件管理、图文并茂的公告通知、多方语音视频互动，完全为您的企业免费呈现。提升办公效率，降低通信费用。</p>
+							<p class="text-muted text">这就是您想要的、您需要的「{{logoName}}」。</p>
+
+						<p class="text-muted">1.2 功能简介</p>
+
+						<p class="text-muted">（1）任务管理</p>
+						<p class="text-muted text">「{{logoName}}」可轻松实现任务发布、分配、进度控制和标记完成，并具有邮件转任务功能，时时跟踪、尽在掌握，具有高效便捷的可交互性。</p>
+
+						<p class="text-muted">（2）即时消息</p>
+						<p class="text-muted text">「{{logoName}}」支持文本、表情、图片、语音、视频等多媒体消息，随时随地实现单人、群组会话，多模式轻松互动，并特有消息转任务功能。</p>
+
+						<p class="text-muted">（3）音视频电话</p>
+						<p class="text-muted text">「{{logoName}}」支持免费的点对点音视频通话，更具备流畅清晰的多人电话会议功能，运营商独有的电话回拨，让音质更稳定更清晰。</p>
+
+						<p class="text-muted">（4）企业通讯录</p>
+						<p class="text-muted text">自由创建多层级组织架构的企业通讯录，清晰的部门层级和员工信息，一键搜索企业联系人，瞬间沟通。</p>
+
+						<p class="text-muted">（5）企业邮箱</p>
+						<p class="text-muted text">绑定企业邮箱，查找邮件地址不再是难题，轻松选定企业联系人，随时随地收发工作邮件，支持多邮箱管理。</p>
+
+						<p class="text-muted">（6）公告消息</p>
+						<p class="text-muted text">企业管理员可以编辑企业公告消息并将公告发送给全公司或者部分指定的接收人，将企业的最新资讯、公告、通知等即时送达企业员工，公告支持配图。</p>																								
+					</div>
+					<div class="pannel" >
+						<div class="number pull-left">2</div>
+						
+						<h5>注册安装</h5>
+						
+							<p class="text-muted ">「{{logoName}}」的申请和使用流程如下：</p>
+							<p class="text-muted text">企业管理员首先要在官网上填写相关资料提交注册申请，注册成功后，企业管理员使用注册手机号和密码登录「{{logoName}}」的管理平台。作为企业管理员，通过管理平台实现数据配置，能便捷创建企业通讯录、用公告群发通知等。企业员工个人信息被录入管理平台后，企业员工即可登录已经下载并安装的「{{logoName}}」手机客户端，输入手机号码和密码完成登录，登陆后企业员工能通过「{{logoName}}」移动客户端，实现在任何时间任何地点的任务管理、多方电话会议、即时消息、企业通讯录、企业邮箱和音视频电话。</p>
+							<img src="images/guide_1.png"/>
+							<p class="imgName text-muted">「{{logoName}}」用户注册登录流程图</p>
+							<p class="text-muted">2.1 企业注册</p>
+							<p class="text-muted text">企业管理员登录「{{logoName}}」官网 yiqiapp.cn ，点击网站首页右上角的“注册”即可进入注册页面。</p>
+							<img  src="images/guide_2.1.0.png"/>
+							<p class="text-muted text">在注册页面，企业管理员填写公司名称、公司所在地、联系人姓名和手机号码等信息并设置密码后，点击“提交申请”，即可成功注册企业。一个手机号可申请注册多个企业。</p>
+							<img  src="images/guide_2.1.1.png"/>
+							<p class="text-muted">2.2 管理平台基本配置</p>
+							<p class="text-muted text">注册成功后，可以选择“返回首页”并在官网首页右上角点击“登录”进入企业管理平台，也可以直接 “登录”并开始管理企业信息。</p>
+							<img  src="images/guide_2.2.1.png"/>
+							<p class="text-muted text">在登录页面，只需输入注册手机号、密码和验证码，并选择登录企业即可进入企业管理平台。</p>
+							<img  src="images/guide_2.2.2.png"/>
+							<p class="text-muted text">第一次登录管理平台后，要进行初始配置，包括基本配置信息、通讯录导入和完成并发送通知短信三部分。</p>
+							<p class="text-muted text">① 基本信息配置：可配置企业名称和企业LOGO。</p>
+							<img  src="images/guide_2.2.3.png"/>
+							<p class="text-muted text">② 通讯录配置：企业管理员可以通过下载模版方式，依照模版中的格式填写企业员工信息，将员工信息导入到管理平台上，上传通讯录后系统会显示上传结果，若账号信息不符合要求会有相应的错误提示，比如:手机号项为空等。</p>
+							<img  src="images/guide_2.2.4.png"/>
+							<p class="text-muted text">③ 通讯录导入后进入“完成”页面，企业管理员可选择联系人给企业员工发送包含「一起」下载地址的通知短信。</p>
+							<img  src="images/guide_2.2.5.png"/>
+					</div>		
+					<div class="pannel">
+						<div class="number pull-left">3</div>
+							
+							<h5>管理平台详细配置</h5>
+							<p class="text-muted text">完成基本配置后，进入管理平台的首页：</p>
+							<img  src="images/guide_3.0.png"/>
+							<p class="text-muted text">管理平台可以进行“添加员工”、“删除”员工、发送“客户端安装提醒”、发送公告消息和设置等操作。</p>					
+							<p class="text-muted">3.1 企业通讯录管理</p>
+							<p class="text-muted text">企业管理平台可以对公司的组织架构进行搭建和编辑，可以编辑部门名称、添加或删除部门、部门内添加子部门，可以增加或删除员工，可以编辑员工的个人信息。</p>
+							<p class="text-muted text">在企业通讯录页面，点击页面上方的“添加员工”，通讯录列表会多出一条空信息，填入新添加的员工信息并点击右端的“√”号即可成功添加一位新员工，对于已经存在于通讯录中的员工，点击相应信息右端的编辑按钮，即可对已有员工信息进行编辑。</p>	
+							<img  src="images/guide_3.1.0.png"/>
+							<p class="text-muted text">选择联系人点击页面上方的“删除”，在跳出的提示页面中点击“确定”即可删除员工。</p>	
+							<img  src="images/guide_3.1.1.png"/>
+							<p class="text-muted">3.2 客户端安装通知</p>
+							<p class="text-muted text">企业管理员可以在企业通讯录中选择一个或多个成员，点击“客户端安装通知”将通知短信发送给相应的企业成员，提醒员工下载安装「{{logoName}}」客户端。</p>
+							<img  src="images/guide_3.2.png"/>
+							<p class="text-muted">3.3 公告消息</p>	
+							<p class="text-muted text">企业管理员可以在企业通讯录中选择一个或多个成员，推送企业公告消息。</p>
+							<p class="text-muted text">选择接收公告的企业成员后，点击管理平台右上角的“公告消息”跳出公告消息编辑页面，公告标题不能超过40字符，公告可添加一张不大于2M的图片作为封面，公告内容支持图文混排。</p>
+							<img  src="images/guide_3.3.png"/>
+							<p class="text-muted">3.4 设置</p>
+							<p class="text-muted text">点击管理平台右上角的“设置”进入设置页面，设置页面包括“企业信息管理”、“管理员配置”和“修改密码”三个部分。</p>	
+							<p class="text-muted">① 企业信息管理</p>	
+							<p class="text-muted text">企业信息管理部分可以对企业名称和企业LOGO进行修改设置。</p>
+							<img  src="images/guide_3.4.1.png"/>
+							<p class="text-muted">② 管理员配置</p>	
+							<p class="text-muted text">管理员配置部门可以添加或删除企业管理员，管理员必须是企业通讯录成员。</p>
+							<img  src="images/guide_3.4.2.png"/>
+							<p class="text-muted">③ 修改密码</p>	
+							<p class="text-muted text">修改密码部分可以修改登录账号的登录密码，密码必须是6-32位的非中文字符。</p>
+							<img  src="images/guide_3.4.3.png"/>
+					</div>
+					<div class="pannel" >
+						<div class="number pull-left">4</div>
+						
+						<h5>功能演示</h5>
+						
+							<p class="text-muted">4.1&nbsp;登录界面</p>
+							<p class="text-muted text">点击“{{logoName}}”图标进入登陆界面，登录名为注册手机号，密码默认为“123456”，登录后可以修改密码。若您忘记密码，可点击登录页面的“找回密码”，在找回密码页面填写您的手机号，我们会将密码以短信的形式发送至您的手机。点击“登陆”后选择所在企业，即可加载数据开启{{logoName}}。</p>
+							<img src="images/guide_4.1.1.png"/>
+
+							<p class="text-muted">4.2&nbsp;消息</p>
+							<p class="text-muted text">登录{{logoName}}后，主界面下端并排有“消息”、“通讯录”、“邮箱”、“更多”四个主要功能图标，消息功能图标位于最左边。</p>
+							<p class="text-muted">（1）发起消息会话</p>
+							<p class="text-muted text">{{logoName}}支持单聊和群组会话。</p>
+							<p class="text-muted text">在通讯录中选择任意联系人，进入联系人名片页，点击“发送消息”即可开启单聊。</p>
+							<p class="text-muted text">点击消息页面右上角“+”可发起群聊，点击弹出的“发起群聊”图标（如下方左图所示），页面跳转至“选择联系人”页面，用户可以手动选择或通过搜索功能选择一个或多个联系人（如下方中图所示），选中并点击屏幕右上方“确定”后，进入“请输入群聊名称”页面，输入群聊名称并点击“确定”后即成功创建群聊（如下方右图所示）。也可以在“选择联系人”页面点击“选择一个群”，进入一个已经创建好的群聊。</p>
+							<img src="images/guide_4.2.1.png"/>
+							<p class="text-muted">（2）消息会话</p>
+							<p class="text-muted text">{{logoName}}支持文本、表情、图片、语音、文件、视频等多种格式的消息发送，并且可以进行语音和视频会话。</p>
+							<p class="text-muted text">在单聊会话框中，会话框下方的输入栏可以直接输出文本消息，点击输入框右边的笑脸图标可以选择多种表情（如下方左图所示）；点击输入框最右边的语音图标可以“按住说话”发送语音消息，若语音消息输入有误，还可以手指上滑，取消发送”（如下方中图所示）；点击输入栏左边的“+”图标出现“拍照”、“图片”、“文件”、“语音”、“视频”几个图标，分别可以拍照发送图片、选择并发送本地图片、发送本地文件、进行语音会话、进行视频会话（如下方右图所示）。</p>
+							<img src="images/guide_4.2.2.png"/>
+							<p class="text-muted text">在单聊的会话框内，右上角有“拨号”和“头像”两个图标，点击“拨号”图标，可选择号码拨打对方的电话（如下方左图所示）。点击头像图标，进入“聊天详情”页面，可以选择“创建群聊”，选择联系人加入此会话；可以进行“置顶会话”、“接收新消息通知”、“通知显示消息详情”的聊天设置；也可以选择“清空聊天记录”（如下方中图所示）。另外，在此页面点击会话参与者头像可以进入名片页查看会话参与者的详细信息。</p>
+							<img src="images/guide_4.2.3.png"/>
+							<p class="text-muted text">在群聊的会话框内，点击页面右上角的双人头像（如下方左图所示），进入“聊天详情”页面，可以点击参与者头像查看参与者详细信息，其中群聊创建者的头像右下角会有特殊标识（如下方中图所示），可以添加新联系人加入群聊，点击“群聊名称”跳出“输入新的群名称”弹窗，可在此修改群聊名称，也可以进行“置顶会话”、“接收新消息通知”、“通知显示消息详情”和 “清空聊天记录”的设置，在该页面最下方可以选择“删除并退出群聊”，删除并退出后，将不再接收此群消息。</p>
+							<img src="images/guide_4.2.4.png"/>
+							<p class="text-muted text">在群聊会话框内，点击左下方“+”号，出现的图标跟单聊场景略有不同，如下方左图所示，此场景没有出现“语音”和“视频”图标而是出现了“电话会议”的图标，点击“电话会议”图标，可发起多方电话会议，群组内成员会接到系统回拨电话，接通电话即可接入电话会议室。</p>
+							<img src="images/guide_4.2.5.png"/>
+							<p class="text-muted text">打开消息列表中任一条会话，用户可以看到其中的聊天记录，上下滑动，用户可以查看该会话的历史记录。长按任一条消息，会出现转发、复制、删除消息和批量编辑等选项，用户可以直接进行转发、复制、删除消息等操作，也可以在选中“批量编辑”后，选中多条消息记录，点击页面左下角的删除图标批量删除或者点击页面右下角的转发图标批量转发选中的信息。</p>
+							<img src="images/guide_4.2.6.png"/>
+							<p class="text-muted">（3）消息列表</p>
+							<p class="text-muted text">消息列表的最上方是任务功能，任务功能以下是会话列表，在会话列表中任选一条会话，长按会弹出“删除会话”和“置顶会话”两个选项，用户可以删除会话或置顶会话。被置顶的会话会以浅蓝色底纹标出位于会话列表的最上方。</p>	
+							<img src="images/guide_4.2.7.png"/>
+							<p class="text-muted">（4）任务</p>
+							<p class="text-muted text">以绿色星号为图标的“任务”位于消息列表的最上方，点击“任务”图标进入任务列表，已完成的任务标灰位于任务列表的下方，左端标有“√”。</p>
+							<p class="text-muted">点击任务页面右上角的“＋”号，可创建新的任务（如下方左图所示），在“创建任务”界面，可以设置任务标题，将任务分配给指定的联系人，设定任务截止时间（如下方中图所示）。被加入任务的成员，可以在该任务下发送文字、图片、语音等信息回复任务完成情况，任务完成时还可以将任务标记为已完成。</p>	
+							<img src="images/guide_4.2.8.png"/>
+							<p class="text-muted">4.3&nbsp;通讯录</p>
+							<p class="text-muted">（1）通讯录页面</p>
+							<p class="text-muted text">通讯录主页默认由企业通讯录、群组、我的收藏和我的部门四部分组成（如下方左图所示），默认将所在部门的成员通讯录列在通讯录首页，是为了方便用户日常工作联系。</p>
+							<p class="text-muted text">在“我的收藏”和“我的部门”两个部分可以通过点击右边箭头进行折叠。</p>
+							<p class="text-muted text">点击通讯录列表任一联系人可进入联系人名片页面，名片页面展示联系人的头像、职位、部门、电话、邮箱等信息。点击右上角三个点的图标可以选择将联系人信息保存到本地（如下方中图所示），保存到本地后，联系人信息将出现在手机本地通讯录中；点亮姓名左边的星号可添加为常用联系人，常用联系人将显示在通讯录“我的收藏”列表，列表会默认展示每个联系人所在的部门；点击电话可选择号码拨打联系人电话（如下方右图所示），点击邮箱地址或者图标，页面会直接跳转到写邮件页面，可编写并发送邮件给联系人；在此页面还可以与联系人发送消息、发起任务、进行视频聊天和免费通话。</p>
+							<img src="images/guide_4.3.1.png"/>
+							<p class="text-muted text">点击通讯录首页右上角的搜索标识可以通过汉字、拼音、数字等字段搜索通讯录中的联系人。</p>
+							<img src="images/guide_4.3.2.png"/>
+
+							<p class="text-muted">（2）企业通讯录</p>
+							<p class="text-muted text">企业通讯录页面提供了清晰的组织架构，让用户能够对本单位的组织结构以及各部分负责人一目了然；通过组织架构查看部门成员构成、定位具体联系人，高效准确。</p>
+							<p class="text-muted text">从通讯录首页进入“企业通讯录”出现公司部门列表，进入部门通讯录默认部门领导放在通讯录顶端（如下方中图所示）。拖动通讯录列表，列表右端会出现一个深灰色的拖动图标，拖动该图标可快速翻阅通讯录（如下方右图所示）。</p>
+							<img src="images/guide_4.3.3.png"/>
+							<p class="text-muted">（3）群组</p>
+							<p class="text-muted text">这里呈现了用户创建以及加入的所有群，用户点击任意一个群，即可进入群聊进行即时消息的发送。点击右上角的“+”号可以选择联系人创建新的群组</p>
+							<img src="images/guide_4.3.4.png"/>
+							<p class="text-muted">4.4&nbsp;邮箱</p>
+							<p class="text-muted text">登录{{logoName}}后，点击进入邮箱模块，用户的企业邮箱地址会默认显示出来，用户需要手动输入登陆邮箱的密码，邮箱登陆成功后即可使用邮箱功能。{{logoName}}邮箱支持同时配置多个邮箱。</p>
+							<p class="text-muted text">在邮箱页面，可以在左上角选择查看星号箱、收件箱、发件箱或者草稿箱（如下方左图所示）。右上角并排有搜索、写邮件和MAIL三个标识，点击搜索标识可以从邮件列表中搜索邮件，点击写邮件标识进入邮件编写页面，收件人可以直接从{{logoName}}通讯录添加，邮件内容支持插入附件（如下方中图所示），点击MAIL标识可以在多个邮箱间进行切换（如下方右图所示）。</p>
+							<img src="images/guide_4.3.5.png"/>
+							<p class="text-muted">4.4&nbsp;更多</p>
+							<p class="text-muted text">更多模块包含了账号信息、应用中心、新消息通知设置、邮箱设置、修改密码、清空缓存、检查更新意见反馈、关于等内容。</p>
+							<p class="text-muted text">点击个人头像进入“个人信息”页面，在个人信息页面可以通过从相册选取和拍照两种方式修改个人头像，其他个人信息不支持修改。进入应用中心可以选择安装并使用多种办公应用。</p>
+							<img src="images/guide_4.4.1.png"/>
+							<p class="text-muted text">新消息通知可以进行消息的通知和提醒设置；邮箱设置可以编辑和添加邮箱，设置自动刷新和邮箱刷新的频率；修改密码功能也是简单易用。</p>
+							<img src="images/guide_4.4.2.png"/>
+							<p class="text-muted text">清空缓存之后，{{logoName}}的运行会更流畅；意见反馈部分支持手动输入文本信息，用户可将使用{{logoName}}过程中的意见和建议反馈给我们的运营团队；点击“关于”可以查看{{logoName}}的版本信息。</p>
+							<img src="images/guide_4.4.3.png"/>
+					</div>					
+				</div>
+				<div class="tab-pane" ng-class="{'active': activeTab === 'qa'}" id="question">
+					<div class="pannel">
+						
+							<h5>企业管理员用户</h5>						
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（1）</div>					
+						
+							<h5>Q：企业管理员有哪些常用权限？</h5>
+							<p class="text-muted ">A：通过登录企业管理平台，企业管理员可以对企业进行：1）初始配置：如基本信息配置，包括企业名称、logo，导入通讯录，修改管理平台登录密码；2）管理平台配置，主要包括通讯录管理、客户端安装提醒、发布公告、选购第三方应用。
+							</p>
+						
+					</div>	
+					<div class="pannel">
+						<div class="number pull-left">（2）</div>					
+						
+							<h5>Q：目前企业管理员在通讯录中可以设置哪些内容？</h5>
+							<p class="text-muted">A：员工姓名、级别、单位部门、职务、手机号、短号、邮箱、优先级。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（3）</div>					
+						
+							<h5>Q：企业管理员如何对企业通讯录进行架构设置和排序？员工可否自己设置？</h5>
+							<p class="text-muted">A：手机客户端显示的企业通讯录的排序与后台管理平台上的排序一致，企业管理员通过在管理平台上进行企业架构的设置和员工排序。考虑到{{logoName}}的核心理念是服务企业办公，因此通讯录排序优先以级别由高到低进行排序；在级别相同时，按照优先级递增依次排列。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number  pull-left">（4）</div>				
+						
+							<h5>Q：企业管理员如何发布公告？如何对企业员工进行客户端安装提醒？</h5>
+							<p class="text-muted">A：进入公告中心，在通讯录中选择与发送公告的联系人，同时在公告中心页面编辑标题、内容（并编辑格式）、图片，点击发送即可。
+							</p>
+							<p class="text-muted">客户端安装提醒在选择联系人时与公告中心基本保持一致，同时发送内容是不可编辑的（其中企业名称与{{logoName}}账户的注册企业名称保持一致）。</p>
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（5）</div>					
+						
+							<h5>Q：应用中心的应用，在企业员工的客户端上如何显示？</h5>
+							<p class="text-muted">A：企业管理员未订购的应用，在员工客户端上不会显示出来，对于企业管理员已经订购的应用，则显示在员工客户端的应用中心模块。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（6）</div>					
+						
+							<h5>Q：用什么浏览器登录管理平台体验最好？</h5>
+							<p class="text-muted">A：建议使用 IE9 以上或火狐(FireFox)或谷歌(Chrome)浏览器以获得最佳体验。</p>
+						
+					</div>
+					
+					<div class="pannel">				
+						
+							<h5>企业员工用户</h5>						
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（1）</div>		
+						
+							<h5>Q：关于登录，是不是用任何手机号码都可以登录？</h5>
+							<p class="text-muted">A：不是，需要企业管理员在企业管理平台加入到通讯录中的号码才能登录，客户端登录密码默认为123456。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（2）</div>
+						
+							<p class="">Q：登录密码忘记怎么办？</p>
+							<p class="text-muted">A：点击登录页面“找回密码”，确认手机号码即可以短信的方式收到{{logoName}}的登录密码。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（3）</div>
+						
+							<h5>Q：消息页面的搜索功能中，支持哪些字段的搜索？</h5>
+							<p class="text-muted">A：支持内容搜索、消息名称搜索。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（4）</div>					
+						
+							<h5>Q：退出后重新登录，消息列表及聊天记录还有吗？</h5>
+							<p class="text-muted">A：退出后在同一设备上重新登录，消息列表及聊天记录都还在，即退出登录对于消息保存没有影响。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（5）</div>					
+						
+							<h5>Q：{{logoName}}的聊天记录是保存在本地还是云端？</h5>
+							<p class="text-muted">A：聊天记录仅保存在本地，手机丢失或更换导致重新安装使用{{logoName}}时，历史聊天记录将会消失。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（6）</div>					
+						
+							<h5>Q：“群发消息”与“发起群聊”区别是什么？</h5>
+							<p class="text-muted">A：群发消息包括一对一发送消息，也包括一人群发消息至多人（接收者之间彼此不可见）；而发起群聊，则是指通过建立群组的方式，在群组内发送消息（接收者彼此之间可见，都存在于同一个群里）。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（7）</div>					
+						
+							<h5>Q：新员工登录{{logoName}}客户端，没有建群，在通讯录“群组”下，为什么有一个自己部门的群？</h5>
+							<p class="text-muted">A：{{logoName}}客户端自动会生成系统群，及该员工所属部门的群组，不必另外组建部门群。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（8）</div>					
+						
+							<h5>Q：员工在群里发一条重要通知，但是很快就被其他消息淹没，怎样能让整个部门或者全公司都接收到此条消息？</h5>
+							<p class="text-muted">A：可将此条重要消息，转由企业管理员，企业管理员在管理平台的公告中心中，向整个部门或者全公司发布公告。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（9）</div>					
+						
+							<h5>Q：通讯录的排序依据什么原则？是否支持员工自定义排序？</h5>
+							<p class="text-muted">A：通讯录排序是由企业管理员在企业管理平台上进行排序，主要依据员工的职务高低进行排序；目前不支持员工自定义排序。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（10）</div>					
+						
+							<h5>Q：通讯录上搜索功能中，支持哪些字段的搜索？</h5>
+							<p class="text-muted">A：员工姓名、姓氏、名字、部门等字段搜索，目前尚不支持多字段组合搜索。</p>
+						
+					</div>
+					
+					<div class="pannel">
+						<div class="number pull-left">（11）</div>					
+						
+							<h5>Q：通讯录模块下的“群组”与消息列表中的群有什么区别吗？若在消息列表中删掉了某个群的会话，那么在此处能找到该群吗？</h5>
+							<p class="text-muted">A：没有区别，这是群的两个入口；若消息列表中删掉了某个群的会话，在此处是可以找到该群的；但是若是退出了群，则群在此处则不会再显示。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（12）</div>					
+							<h5>任务支持那些多媒体的发送？</h5>
+							<p class="text-muted">A：任务可以发消息、语音、图片、照相机，鉴于任务本身的严肃性，所以任务里不能发表情。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（13）</div>					
+						
+							<h5>Q：任务有哪些重要功能？</h5>
+							<p class="text-muted">A：任务中可以设定任务截止时间，创建任务者可以标记任务完成，同时消息、邮件都可以转任务。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（14）</div>					
+						
+							<h5>Q：邮件转任务，为什么要给创建人自己发一封邮件？</h5>
+							<p class="text-muted">A：邮件转任务，此封被标记为任务的邮件将会发给任务里的所有人；只有邮件再次发给创建人时，邮件才会被标记为任务标记，此时才能通过任务里的邮件链接查看邮件内容。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（15）</div>					
+						
+							<h5>Q：客户端有的任务逾期了，怎么删除？</h5>
+							<p class="text-muted">A：{{logoName}}目前的机制是，只有创建任务者本人可以删除任务，任务中其他人员不可以删除任务。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（16）</div>					
+						
+							<h5>Q：群中除群创建者外的群成员、任务中除创建任务者外的成员，可以更改群名称、任务名称吗？</h5>
+							<p class="text-muted">A：群成员均可以更改该群的群名称，任务中的成员均可以更改任务名称和任务截止时间。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（17）</div>					
+						
+							<h5>Q：客户端默认邮件通知太频繁，怎么能控制邮件通知频率？</h5>
+							<p class="text-muted">A：更多——>邮箱设置——>自动刷新关闭，将停止邮件通知功能，自动刷新开启，可修改刷新频率时间来设置邮件通知频率。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（18）</div>					
+						
+							<h5>Q：什么是免费电话？</h5>
+							<p class="text-muted">A：同属来讲，就是在WiFi、4G网络下，可以拨打电话，建议在网络良好情况下拨打电话。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（19）</div>					
+						
+							<h5>Q：给一起通讯录里的同事拨打免费电话或视频聊天时，为什么有时候同事打通，有时候是忙音提示？</h5>
+							<p class="text-muted">A：只有双方都保持{{logoName}}登录状态，免费电话或者视频聊天就可以接通，否则，忙音提示，这同QQ视频语音是一个道理。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">（20）</div>					
+						
+							<h5>Q：客户端有web端的吗？</h5>
+							<p class="text-muted">A：有的，即web-IM（http://hy.10086.cn/talk/），但是目前功能尚不完备，正在持续优化中，建议使用移动客户端操作。</p>
+						
+					</div>
+				</div>
+				<div class="tab-pane" ng-class="{'active': activeTab === 'contact'}" id="contact">
+					
+					<div class="pannel">
+						<div class="number pull-left">1</div>
+						
+							<h5>公司简介 </h5>
+							<p class="text-muted">中国移动杭州研发中心是中国移动集团公司直属研发机构和全资子公司（正厅级单位），是中国移动探索集中化经营新思路在研发领域的重要布局。我们的战略定位是做专业的移动互联网解决方案提供商，成为公司移动互联网的“开发基地、产业基地、人才基地”。我们将通过能力开放引领产业合作，构建具有中国移动特色的移动互联网生态环境。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">2</div>
+						
+							<h5>产品简介 </h5>
+							<p class="text-muted">{{logoName}}是一款高效、快捷的企业即时通信产品。通过移动端的即时消息、通讯录、邮箱、应用中心等功能模块，有效实现企业内部沟通的各项需求，降低沟通成本，提高办公效率。为您倾力打造信息时代企业协同办公和移动互联的整体解决方案。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">3</div>
+						
+							<h5>团队建设 </h5>
+							<p class="text-muted">我们拥有一个高质高效高素质人才团队，不仅包含丰富研发经验的行业资深专业人员和熟悉移动业务的高级管理人员，而且也吸了大批互联网行业的新鲜血液的加入，为产品的创新提供了用之不竭的新观点。我们彼此团结合作、互相学习、共同进步，致力于突破传统企业软件的枷锁，开拓互联网时代全新的企业移动应用平台。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">4</div>
+						
+							<h5>我们的愿景 </h5>
+							<p class="text-muted">我们将团结一致，众志成城，致力于将中国移动杭州研发中心建设成为国内一流、国际领先的世界级研发机构，竭力助推中国移动在科技创新、技术研发、运营支撑等方面的核心竞争力。</p>
+						
+					</div>
+
+				</div>
+				<div class="tab-pane" ng-class="{'active': activeTab === 'protocol'}" id="protocol">
+					<div class="pannel">
+						<div class="number pull-left">1</div>
+						
+							<h5>关于</h5>
+							<p class="text-muted">本协议是您与中国移动杭州研发中心（下称杭研）之间的协议约定。{{logoName}}是由杭研提供的企业社会化互联网协作平台。在{{logoName}}创建账户并使用之前，您必须首先同意此协议。</p>
+							<p class="text-muted">此协议在必要时将进行修订，且毋须另行通知。修订后的协议一旦在网页上公布即有效代替原来的用户协议。</p>
+						
+					</div>
+					<div class="pannel">
+						<div class="number pull-left">2</div>
+						
+							<h5>账户</h5>
+							<p class="text-muted">
+								您需要同意并理解您有责任将您用于获得服务的任何帐户相关的密码保密。您对您账户下发生的所有的行为和内容负责。</p>
+						
+					</div>
+					<div class="pannel" >
+						<div class="number pull-left">3</div>
+						
+							<h5>计费</h5>
+							<p class="text-muted">{{logoName}}提供了免费版本、付费版本两种实施与价格方案。您可以根据实际需要进行选择。</p>
+							<p class="text-muted">免费版本：现阶段您无需支付任何费用即可申请体验{{logoName}}，但对于您的免费体验时长杭研将作出一定的规定，而并非永久免费。</p>
+							<p class="text-muted">付费版本：本协议项下的所有计费均受限于在{{logoName}}网站上发布的{{logoName}}届时有效的有关计费的条款和条件（“计费条款”将在必要时进行修订）。</p>
+						
+					</div>
+					<div class="pannel" >
+						<div class="number pull-left">4</div>
+						
+							<h5>内容和版权</h5>
+							<p class="text-muted">杭研对您在本协议提交的内容没有所有权，这些内容的所有权仍然归您所有。但是，如果您将页面设置为公开，就意味着您允许其他人查看和共享您的内容。</p>
+							<p class="text-muted">您明白杭研对他人提供的任何内容不存在任何方面负责或负有责任，杭研没有义务预先审查此类内容。但是，杭研有权随时决定内容是否合适及与本协议是否相符；如果发现此类内容违反本协议或在其他方面令人反感，杭研可随时并有绝对酌情权预先审查、转移、拒绝、修改或删除内容，而不需事先通知。本协议的外观设计与专利归杭研所有。未经杭研书面许可，您不能复制、拷贝，或者重用任何部分代码和外观设计。</p>
+						
+					</div>
+					<div class="pannel" >
+						<div class="number pull-left">5</div>
+						
+							<h5>隐私政策</h5>
+							<p class="text-muted">使用{{logoName}}，即表示您同意杭研合法收集和使用有关您及您所使用本协议的技术性或诊断性信息。杭研收集到的这些信息将用于改进网页的内容，提升我们的服务品质。杭研不会将您的信息和内容分享或出售给其他的组织。但以下情况除外：</p>
+							<p class="text-muted">1）您同意让第三方共享资料；</p>
+							<p class="text-muted">2）杭研需要听从法庭传票、法律命令或遵循法律程序；</p>
+							<p class="text-muted">3）您违反了本协议。</p>
+						
+					</div>			
+					<div class="pannel" >
+						<div class="number pull-left">6</div>
+						
+							<h5>终止</h5>
+							<p class="text-muted">您可随时终止您的帐户或停用{{logoName}}。</p>
+							<p class="text-muted">杭研可随时在某些情况下，不需事先通知，立即终止或暂停您所有部分帐户或{{logoName}}进入。此类服务终止的原因包括但不限于：</p>
+							<p class="text-muted">1）违反本协议；
+							<p class="text-muted"> 2）您要求取消或终止您的帐户；</p>
+							<p class="text-muted"> 3）需要听从法庭传票、法律命令或遵循法律程序；</p>
+							<p class="text-muted"> 4）突发的自然灾害导致的问题；</p>
+							<p class="text-muted"> 5）战争、军事行动、暴动或武装叛乱；</p>
+							<p class="text-muted"> 6）您没有支付与本协议相关的费用；</p>
+							<p class="text-muted"> 一旦您的帐户被终止，您将无法正常使用{{logoName}}。此外，您可以选择删除您账户下的所有信息和内容。</p>
+						
+					</div>
+					<div class="pannel" >					
+						
+							<p class="text-muted">最近修订 2014年9月12日。</p>
+							<p class="text-muted">©中国移动杭州研发中心 保留一切权利。</p>
+
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

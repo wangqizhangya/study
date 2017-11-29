@@ -1,0 +1,12 @@
+Flask
+requests
+
+Pillow
+
+
+
+
+1  python 2.7
+2  setuptools-7.0  #pip easy_install
+3  yum install freetype-devel
+4  /usr/local/bin/pip install Flask image requests Pillow 

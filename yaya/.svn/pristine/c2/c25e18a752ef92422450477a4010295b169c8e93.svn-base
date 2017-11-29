@@ -1,0 +1,74 @@
+#coding=utf-8  
+
+
+import StringIO
+import captcha 
+import sms_send
+import json
+from flask import Flask, session, current_app, request, Response, make_response
+from flask import render_template, send_from_directory, url_for
+import requests
+
+
+app = Flask(__name__, static_url_path='')  
+
+app.config.from_object("settings")
+
+@app.route('/')  
+def index():
+    # return 'hello'
+    # return make_response(open('static/index.html').read())
+    return app.send_static_file('index.html')
+    # return send_from_directory('/static', 'index.html')
+ 
+@app.route('/code/')  
+def get_code():  
+    
+#把strs发给前端,或者在后台使用session保存  
+    code_img,strs = captcha.create_validate_code()
+    session['captcha'] = strs
+    buf = StringIO.StringIO()  
+    #code_img.save(buf,'JPEG',quality=70)  
+    code_img.save(buf, 'PNG')
+
+    print current_app.config['SMS_AGENT']
+    print '====='
+    buf_str = buf.getvalue()  
+    response = app.make_response(buf_str)   
+    response.headers['Content-Type'] = 'image/jpeg'  
+    return response  
+
+@app.route('/downloadurl')
+def check_code():
+    captchar_code = request.args.get('captchar_code', '')
+    tele = request.args.get('telephone')
+    if session['captcha'] == captchar_code:
+        sms_send.send_sms(tele, current_app.config['DOWNLOAD_URL'])
+        return '{"success" : true}'
+    return '{"success" : false, "msg"}'
+
+@app.route('/cms/user/regCorpAndUsr', methods=['POST', 'GET'])
+def reg_user():
+    payload = request.data
+    
+    # print json.dumps(payload)
+    r = requests.post(current_app.config['API_HOST'] + '/cms/user/regCorpAndUsr', data = payload)
+    return r.text
+
+@app.route('/cms/apk/getApkInfo', methods=['POST', 'GET'])
+def get_apk():
+    r = requests.get(current_app.config['API_HOST'] + '/cms/apk/getApkInfo')
+    return r.text
+
+@app.route('/apply_account', methods=['POST', 'GET'])
+def apply_account():
+    payload = {'province': request.form['province'], 'city': request.form['city'], 'company': request.form['company'], 'name': request.form['name'], 'tele': request.form['tele']}
+    # Form 提交
+    r = requests.post(current_app.config['API_HOST'] + '/eas/self', data = payload)
+    # Json Object 提交
+    # r = requests.post(url, data=json.dumps(payload))
+    return r.text
+
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",port=80,debug=True)

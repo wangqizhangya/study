@@ -1,0 +1,11 @@
+import requests
+from flask import current_app
+
+
+def send_sms(teles, content):
+    if type(teles) == type([]):
+        teles = ','.join(teles)
+    url = current_app.config['SMS_AGENT'] +  "?mobile=" + teles + "&content=" + content + "&batchId=ems&type=0";
+    r = requests.get(url)
+
+    return r.status_code 

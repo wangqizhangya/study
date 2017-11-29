@@ -1,0 +1,744 @@
+'use strict';
+angular.module('eqiWebsiteApp')
+	.controller('applyCtrl',['$scope','$http','$state','logoName', 'host', function ($scope,$http,$state,logoName, host) {
+		
+        $scope.waiting = false;
+        $scope.success = false;
+
+        $scope.logoName = logoName;
+        $scope.host = host;
+        $scope.check = {}
+        $scope.addresses = [
+            {
+                "name": "北京",
+                "citys": [
+                    { "name": "东城区" },
+                    { "name": "西城区" },
+                    { "name": "朝阳区" },
+                    { "name": "海淀区" },
+                    { "name": "丰台区" },
+                    { "name": "石景山区" },
+                    { "name": "房山区" },
+                    { "name": "通州区" },
+                    { "name": "顺义区" },
+                    { "name": "大兴区" },
+                    { "name": "昌平区" },
+                    { "name": "平谷区" },
+                    { "name": "怀柔区" },
+                    { "name": "门头沟区" },
+                    { "name": "延庆县" },
+                    { "name": "密云县" }
+                  ]
+            }, {
+                "name": "天津",
+                "citys": [
+                    { "name": "和平区" },
+                    { "name": "河东区" },
+                    { "name": "南开区" },
+                    { "name": "河西区" },
+                    { "name": "河北区" },
+                    { "name": "红桥区" },
+                    { "name": "东丽区" },
+                    { "name": "西青区" },
+                    { "name": "津南区" },
+                    { "name": "北辰区" },
+                    { "name": "滨海新区" },
+                    { "name": "武清区" },
+                    { "name": "宝坻区" },
+                    { "name": "静海县" },
+                    { "name": "宁河县" },
+                    { "name": "蓟县" }
+                ]
+            }, {
+                "name": "上海",
+                "citys": [
+                    { "name": "黄浦区" },
+                    { "name": "浦东新区" },
+                    { "name": "徐汇区" },
+                    { "name": "长宁区" },
+                    { "name": "静安区" },
+                    { "name": "普陀区" },
+                    { "name": "闸北区" },
+                    { "name": "虹口区" },
+                    { "name": "杨浦区" },
+                    { "name": "闵行区" },
+                    { "name": "宝山区" },                  
+                    { "name": "嘉定区" },
+                    { "name": "金山区" },
+                    { "name": "松江区" },                  
+                    { "name": "青浦区" },
+                    { "name": "奉贤区" },
+                    { "name": "崇明县" }
+                ]
+            }, {
+                "name": "重庆",
+                "citys": [
+                    
+                    { "name": "渝中区" },
+                    { "name": "大渡口区" },
+                    { "name": "江北区" },
+                    { "name": "沙坪坝区" },
+                    { "name": "九龙坡区" },
+                    { "name": "南岸区" },
+                    { "name": "北碚区" },
+                    { "name": "渝北区" },
+                    { "name": "巴南区" },
+                    { "name": "万州区" },
+                    { "name": "涪陵区" },
+                    { "name": "綦江区" },
+                    { "name": "大足区" },
+                    { "name": "黔江区" },
+                    { "name": "长寿区" },
+                    { "name": "江津区" },
+                    { "name": "合川区" },
+                    { "name": "永川区" },
+                    { "name": "南川区" },
+                    { "name": "铜梁区" },
+                    { "name": "璧山区" },                  
+                    { "name": "潼南区" },             
+                    { "name": "荣昌区" },
+                    { "name": "梁平县" },
+                    { "name": "城口县" },
+                    { "name": "丰都县" },
+                    { "name": "垫江县" },
+                    { "name": "武隆县" },
+                    { "name": "忠县" },
+                    { "name": "开县" },
+                    { "name": "云阳县" },
+                    { "name": "奉节县" },
+                    { "name": "巫山县" },
+                    { "name": "巫溪县" },
+                    { "name": "石柱土家族自治县" },
+                    { "name": "秀山土家族苗族自治县" },
+                    { "name": "酉阳土家族苗族自治县" },
+                    { "name": "彭水苗族土家族自治县" }
+                ]
+            }, {
+                "name": "河北省",
+                "citys": [
+                    { "name": "石家庄" },
+                    { "name": "唐山" },
+                    { "name": "秦皇岛" },
+                    { "name": "邯郸" },
+                    { "name": "邢台" },
+                    { "name": "保定" },
+                    { "name": "张家口" },
+                    { "name": "承德" },
+                    { "name": "沧州" },
+                    { "name": "廊坊" },
+                    { "name": "衡水" }
+                ]
+            }, {
+                "name": "山西省",
+                "citys": [
+                    { "name": "太原" },
+                    { "name": "大同" },
+                    { "name": "阳泉" },
+                    { "name": "长治" },
+                    { "name": "晋城" },
+                    { "name": "朔州" },
+                    { "name": "忻州" },
+                    { "name": "吕梁" },
+                    { "name": "晋中" },
+                    { "name": "临汾" },
+                    { "name": "运城" }          
+                ]
+            }, {
+                "name": "内蒙古自治区",
+                "citys": [
+                    { "name": "呼和浩特" },
+                    { "name": "包头" },
+                    { "name": "乌海" },
+                    { "name": "赤峰" },
+                    { "name": "通辽" },
+                    { "name": "呼伦贝尔" },
+                    { "name": "乌兰察布" },
+                    { "name": "鄂尔多斯" },            
+                    { "name": "巴彦淖尔" },                 
+                    { "name": "兴安盟" },
+                    { "name": "阿拉善盟" },
+                    { "name": "锡林郭勒盟" }
+                ]
+            }, {
+                "name": "辽宁省",
+                "citys": [
+                    { "name": "沈阳" },
+                    { "name": "大连" },
+                    { "name": "鞍山" },
+                    { "name": "抚顺" },
+                    { "name": "本溪" },
+                    { "name": "丹东" },
+                    { "name": "锦州" },
+                    { "name": "营口" },
+                    { "name": "阜新" },
+                    { "name": "辽阳" },
+                    { "name": "盘锦" },
+                    { "name": "铁岭" },
+                    { "name": "朝阳" },
+                    { "name": "葫芦岛" }
+                ]
+            }, {
+                "name": "吉林省",
+                "citys": [
+                    { "name": "长春" },
+                    { "name": "吉林" },
+                    { "name": "四平" },
+                    { "name": "辽源" },
+                    { "name": "通化" },
+                    { "name": "白山" },                   
+                    { "name": "白城" },
+                    { "name": "松原" },
+                    { "name": "延边朝鲜族自治州" }
+                ]
+            }, {
+                "name": "黑龙江省",
+                "citys": [
+                    { "name": "哈尔滨" },
+                    { "name": "齐齐哈尔" },
+                    { "name": "牡丹江" },
+                    { "name": "佳木斯" },
+                    { "name": "大庆" },
+                    { "name": "伊春" },
+                    { "name": "鸡西" },
+                    { "name": "鹤岗" },
+                    { "name": "双鸭山" },                   
+                    { "name": "七台河" },                   
+                    { "name": "黑河" },
+                    { "name": "绥化" },
+                    { "name": "大兴安岭地区" }
+                ]
+            }, {
+                "name": "江苏省",
+                "citys": [
+                    { "name": "南京" },
+                    { "name": "无锡" },
+                    { "name": "常州" },
+                    { "name": "苏州" },
+                    { "name": "南通" },
+                    { "name": "淮安" },
+                    { "name": "扬州" },
+                    { "name": "镇江" },
+                    { "name": "泰州" },
+                    { "name": "宿迁" },
+                    { "name": "徐州" },
+                    { "name": "盐城" },
+                    { "name": "连云港" }
+                ]
+            }, {
+                "name": "浙江省",
+                "citys": [
+                    { "name": "杭州" },
+                    { "name": "宁波" },
+                    { "name": "温州" },
+                    { "name": "嘉兴" },
+                    { "name": "湖州" },
+                    { "name": "绍兴" },
+                    { "name": "金华" },
+                    { "name": "衢州" },
+                    { "name": "舟山" },
+                    { "name": "台州" },
+                    { "name": "丽水" }
+                ]
+            }, {
+                "name": "安徽省",
+                "citys": [
+                    { "name": "合肥" },
+                    { "name": "芜湖" },
+                    { "name": "蚌埠" },
+                    { "name": "淮南" },
+                    { "name": "马鞍山" },
+                    { "name": "淮北" },
+                    { "name": "铜陵" },
+                    { "name": "安庆" },
+                    { "name": "黄山" },
+                    { "name": "阜阳" },
+                    { "name": "宿州" },
+                    { "name": "滁州" },
+                    { "name": "六安" },
+                    { "name": "宣城" },
+                    { "name": "池州" },                   
+                    { "name": "毫州" }
+                ]
+            }, {
+                "name": "福建省",
+                "citys": [
+                    { "name": "福州" },
+                    { "name": "厦门" },
+                    { "name": "莆田" },
+                    { "name": "三明" },
+                    { "name": "泉州" },
+                    { "name": "漳州" },
+                    { "name": "南平" },
+                    { "name": "龙岩" },
+                    { "name": "宁德" },
+                    { "name": "平潭" }
+                ]
+            }, {
+                "name": "江西省",
+                "citys": [
+                    { "name": "南昌" },
+                    { "name": "景德镇" },
+                    { "name": "萍乡" },
+                    { "name": "九江" },
+                    { "name": "新余" },
+                    { "name": "鹰潭" },
+                    { "name": "赣州" },
+                    { "name": "吉安" },
+                    { "name": "宜春" },
+                    { "name": "抚州" },
+                    { "name": "上饶" }
+                ]
+            }, {
+                "name": "山东省",
+                "citys": [
+                    { "name": "济南" },
+                    { "name": "青岛" },
+                    { "name": "淄博" },
+                    { "name": "枣庄" },
+                    { "name": "东营" },
+                    { "name": "烟台" },
+                    { "name": "潍坊" },
+                    { "name": "济宁" },
+                    { "name": "泰安" },
+                    { "name": "威海" },
+                    { "name": "日照" },
+                    { "name": "滨州" },
+                    { "name": "德州" },
+                    { "name": "聊城" },
+                    { "name": "临沂" },             
+                    { "name": "菏泽" },
+                    { "name": "莱芜" }
+                ]
+            }, {
+                "name": "河南省",
+                "citys": [
+                    { "name": "郑州" },
+                    { "name": "开封" },
+                    { "name": "洛阳" },
+                    { "name": "安阳" },
+                    { "name": "鹤壁" },
+                    { "name": "新乡" },
+                    { "name": "焦作" },
+                    { "name": "濮阳" },
+                    { "name": "许昌" },
+                    { "name": "漯河" },
+                    { "name": "南阳" },
+                    { "name": "商丘" },
+                    { "name": "信阳" },
+                    { "name": "周口" },
+                    { "name": "济源" },
+                    { "name": "平顶山" },
+                    { "name": "驻马店" },
+                    { "name": "三门峡" }
+                ]
+            }, {
+                "name": "湖北省",
+                "citys": [
+                    { "name": "武汉" },
+                    { "name": "黄石" },
+                    { "name": "十堰" },
+                    { "name": "荆州" },
+                    { "name": "宜昌" },
+                    { "name": "襄阳" },
+                    { "name": "鄂州" },
+                    { "name": "荆门" },
+                    { "name": "黄冈" },
+                    { "name": "孝感" },                   
+                    { "name": "咸宁" },
+                    { "name": "仙桃" },
+                    { "name": "潜江" },
+                    { "name": "随州" },
+                    { "name": "天门" },
+                    { "name": "神农架林区" },
+                    { "name": "恩施土家族苗族自治州" }
+                ]
+            }, {
+                "name": "湖南省",
+                "citys": [
+                    { "name": "长沙" },
+                    { "name": "株洲" },
+                    { "name": "湘潭" },
+                    { "name": "衡阳" },
+                    { "name": "邵阳" },
+                    { "name": "岳阳" },
+                    { "name": "常德" },
+                    { "name": "张家界" },
+                    { "name": "益阳" },
+                    { "name": "娄底" },
+                    { "name": "郴州" },
+                    { "name": "永州" },
+                    { "name": "怀化" },                    
+                    { "name": "湘西土家族苗族自治州" }
+                    
+                ]
+            }, {
+                "name": "广东省",
+                "citys": [
+                    { "name": "广州" },                    
+                    { "name": "深圳" },
+                    { "name": "珠海" },
+                    { "name": "汕头" },
+                    { "name": "佛山" },
+                    { "name": "韶关" },                    
+                    { "name": "湛江" },
+                    { "name": "肇庆" },
+                    { "name": "江门" },
+                    { "name": "茂名" },
+                    { "name": "惠州" },
+                    { "name": "梅州" },                   
+                    { "name": "汕尾" },
+                    { "name": "河源" },
+                    { "name": "阳江" },
+                    { "name": "清远" },
+                    { "name": "东莞" },
+                    { "name": "中山" },
+                    { "name": "潮州" },
+                    { "name": "揭阳" },
+                    { "name": "云浮" }
+                ]
+            }, {
+                "name": "海南省",
+                "citys": [
+                    { "name": "海口市" },
+                    { "name": "三亚市" },
+                    { "name": "三沙市" },
+                    { "name": "儋州市" },
+                    { "name": "五指山市" },
+                    { "name": "琼海市" },                 
+                    { "name": "文昌市" },
+                    { "name": "万宁市" },
+                    { "name": "东方市" },
+                    { "name": "定安县" },
+                    { "name": "屯昌县" },
+                    { "name": "澄迈县" },
+                    { "name": "临高县" },
+                    { "name": "白沙黎族自治县" },
+                    { "name": "昌江黎族自治县" },
+                    { "name": "乐东黎族自治县" },
+                    { "name": "陵水黎族自治县" },
+                    { "name": "洋浦经济开发区" },
+                    { "name": "西沙群岛" },
+                    { "name": "南沙群岛" },
+                    { "name": "中沙群岛" }                   
+                ]
+            }, {
+                "name": "四川省",
+                "citys": [
+                    { "name": "成都市" },
+                    { "name": "绵阳市" },
+                    { "name": "自贡市" },
+                    { "name": "攀枝花市" },
+                    { "name": "泸州市" },
+                    { "name": "德阳市" },
+                    { "name": "广元市" },
+                    { "name": "遂宁市" },
+                    { "name": "内江市" },
+                    { "name": "乐山市" },
+                    { "name": "资阳市" },                  
+                    { "name": "宜宾市" },
+                    { "name": "南充市" },                 
+                    { "name": "达州市" },                  
+                    { "name": "雅安市" },          
+                    { "name": "阿坝藏族羌族自治州" },
+                    { "name": "甘孜藏族自治州" },
+                    { "name": "凉山彝族自治州" },
+                    { "name": "广安市" },
+                    { "name": "巴中市" },
+                    { "name": "眉山市" }
+                ]
+            }, {
+                "name": "云南省",
+                "citys": [
+                    { "name": "昆明市" },
+                    { "name": "曲靖市" },
+                    { "name": "玉溪市" },
+                    { "name": "保山市" },
+                    { "name": "昭通市" },
+                    { "name": "丽江市" },
+                    { "name": "普洱市" },
+                    { "name": "临沧市" },                  
+                    { "name": "德宏傣族景颇族自治州" },
+                    { "name": "怒江傈僳族自治州" },
+                    { "name": "迪庆藏族自治州" },
+                    { "name": "大理白族自治州" },
+                    { "name": "楚雄彝族自治州" },
+                    { "name": "红河哈尼族彝族自治州" },
+                    { "name": "文山壮族自治州" },         
+                    { "name": "西双版纳傣族自治州" }
+                ]
+            }, {
+                "name": "陕西省",
+                "citys": [
+                    { "name": "西安市" },
+                    { "name": "宝鸡市" },
+                    { "name": "咸阳市" },
+                    { "name": "渭南市" },
+                    { "name": "铜川市" },
+                    { "name": "延安市" },
+                    { "name": "榆林市" },
+                    { "name": "安康市" },
+                    { "name": "汉中市" },
+                    { "name": "商洛市" },
+                    { "name": "杨凌示范区" }
+                ]
+            }, {
+                "name": "甘肃省",
+                "citys": [
+                    { "name": "兰州市" },
+                    { "name": "酒泉市" },
+                    { "name": "金昌市" },
+                    { "name": "天水市" },
+                    { "name": "嘉峪关市" },                
+                    { "name": "武威市" },
+                    { "name": "张掖市" },
+                    { "name": "白银市" },
+                    { "name": "平凉市" },
+                    { "name": "庆阳市" },                   
+                    { "name": "定西市" },
+                    { "name": "陇南市" },
+                    { "name": "临夏回族自治州" },
+                    { "name": "甘南藏族自治州" }
+                ]
+            }, {
+                "name": "贵州省",
+                "citys": [
+                    { "name": "贵阳市" },
+                    { "name": "六盘水市" },
+                    { "name": "遵义市" },
+                    { "name": "铜仁地区" },
+                    { "name": "黔西南布依族苗族自治州" },
+                    { "name": "毕节市" },
+                    { "name": "安顺市" },
+                    { "name": "黔东南苗族侗族自治州" },
+                    { "name": "黔南布依族苗族自治州" }
+                ]
+            }, {
+                "name": "青海省",
+                "citys": [
+                    { "name": "西宁市" },
+                    { "name": "海东市" },
+                    { "name": "海北藏族自治州" },
+                    { "name": "黄南藏族自治州" },
+                    { "name": "海南藏族自治州" },
+                    { "name": "果洛藏族自治州" },
+                    { "name": "玉树藏族自治州" },
+                    { "name": "海西蒙古族藏族自治州" }
+                ]
+            }, {
+                "name": "台湾",
+                "citys": [
+                    { "name": "台北市" },
+                    { "name": "新北市" },
+                    { "name": "桃园市" },                  
+                    { "name": "台中市" },
+                    { "name": "台南市" },
+                    { "name": "高雄市" },
+                    { "name": "基隆市" },
+                    { "name": "新竹市" },
+                    { "name": "嘉义市" },                                  
+                    { "name": "新竹县" },
+                    { "name": "苗栗县" },
+                    { "name": "彰化县" },
+                    { "name": "南投县" },
+                    { "name": "嘉义县" },
+                    { "name": "云林县" },
+                    { "name": "屏东县" },
+                    { "name": "台东县" },
+                    { "name": "花莲县" },
+                    { "name": "澎湖县" },
+                    { "name": "宜兰县" },
+                    { "name": "金门县" },
+                    { "name": "连江县" },
+                    { "name": "钓鱼岛" }
+                ]
+            }, {
+                "name": "广西壮族自治区",
+                "citys": [
+                    { "name": "南宁市" },
+                    { "name": "柳州市" },
+                    { "name": "桂林市" },
+                    { "name": "梧州市" },
+                    { "name": "北海市" },
+                    { "name": "防城港市" },
+                    { "name": "钦州市" },
+                    { "name": "贵港市" },
+                    { "name": "玉林市" },
+                    { "name": "百色市" },
+                    { "name": "崇左市" },
+                    { "name": "来宾市" },
+                    { "name": "贺州市" },                 
+                    { "name": "河池市" }
+                ]
+            }, {
+                "name": "西藏自治区",
+                "citys": [
+                    { "name": "拉萨市" },
+                    { "name": "昌都市" },
+                    { "name": "日喀则市" },
+                    { "name": "林芝市" },
+                    { "name": "山南地区" },                   
+                    { "name": "那曲地区" },
+                    { "name": "阿里地区" },                 
+                ]
+            }, {
+                "name": "宁夏回族自治区",
+                "citys": [
+                    { "name": "银川市" },
+                    { "name": "石嘴山市" },
+                    { "name": "吴忠市" },
+                    { "name": "固原市" },
+                    { "name": "中卫市" }
+                ]
+            }, {
+                "name": "新疆维吾尔自治区",
+                "citys": [
+                    { "name": "乌鲁木齐市" },
+                    { "name": "克拉玛依市" },
+                    { "name": "吐鲁番市" },
+                    { "name": "哈密地区" },
+                    { "name": "昌吉回族自治州" },
+                    { "name": "博尔塔拉蒙古自治州" },
+                    { "name": "巴音郭楞蒙古自治州" },
+                    { "name": "阿克苏地区" },
+                    { "name": "克孜勒苏柯尔克孜自治州" },
+                    { "name": "喀什地区" },
+                    { "name": "和田地区" },
+                    { "name": "伊犁哈萨克自治州" },
+                    { "name": "塔城地区" },
+                    { "name": "阿勒泰地区" },
+                    { "name": "石河子市" },
+                    { "name": "阿拉尔市" },
+                    { "name": "图木舒克市" },
+                    { "name": "五家渠市" },
+                    { "name": "北屯市" },
+                    { "name": "铁门关市" },
+                    { "name": "双河市" },
+                    { "name": "可克达拉市" }
+                ]
+            }, {
+                "name": "香港特别行政区",
+                "citys": [
+                    { "name": "香港岛" },
+                    { "name": "九龙半岛" },
+                    { "name": "新界" }
+                ]
+            }, {
+                "name": "澳门特别行政区",
+                "citys": [
+                    { "name": "澳门半岛" },                  
+                    { "name": "离岛" },
+                    { "name": "路氹城" }
+                ]
+            }
+        ]
+
+        $scope.staffsizes = [
+            {"id":"0","name":"0-50人"},
+            {"id":"1","name":"51-100人"},
+            {"id":"2","name":"101-200人"},
+            {"id":"3","name":"201-500人"},
+            {"id":"4","name":"500人以上"}
+        ]
+        $scope.user = {}
+
+
+       // $scope.user.province = $scope.addresses[0]
+       // $scope.user.city = $scope.user.province.citys[0]
+   
+        
+        $scope.company = {}
+
+		
+		$scope.apply = function() {
+
+            var reg = /^0?(13|15|18|19|17)[0-9]{9}$/
+            var namereg = /^(([a-zA-Z])|([\u4e00-\u9fa5]))/
+            var emailReg = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/
+    
+            if (!$scope.company.name || $scope.company.name.length < 2 ){   
+                $scope.errorMessage = '企业名称不能少于2个字符'
+                return
+            }
+            
+            if (!$scope.user.province) {
+                $scope.errorMessage = '请选择公司所在省份'
+                return
+            }
+            if (!$scope.user.city) {
+                $scope.errorMessage = '请选择公司所在城市'
+                return
+            }
+            // if (!$scope.company.staffsize) {
+            //     $scope.errorMessage = '请选择公司规模'
+            //     return
+            // }
+            if (!$scope.company.contact || $scope.company.contact.length < 1 ) {
+                $scope.errorMessage = '联系人姓名不能少于1个字符'
+                return
+            }
+            if (!namereg.test($scope.company.contact)) {
+                 $scope.errorMessage = '请输入真实的联系人姓名（以字母或汉字开头）'
+                return
+
+            }
+
+            if (!$scope.company.tel || !reg.test($scope.company.tel)) {              
+                $scope.errorMessage = '请输入正确的手机号'
+                return
+            }
+            if (!$scope.company.password || $scope.company.password.length < 6 ) {              
+                $scope.errorMessage = '密码不能少于6个字符'
+                return
+            }            
+            
+            if ($scope.company.password && $scope.company.password !== $scope.check.repeatPassword) {
+                $scope.errorMessage = '两次输入的密码不一致，请确认'
+                return
+            }
+
+            if ($scope.company.email && !emailReg.test($scope.company.email)) {              
+                $scope.errorMessage = '请输入正确的邮箱地址'
+                return
+            }
+
+            if (!$scope.check.agreement) {
+                $scope.errorMessage = '请仔细阅读并同意用户协议'
+                return
+            }
+            
+            $scope.company.province = $scope.user.province.name
+            $scope.company.city = $scope.user.city.name
+            $scope.company.channel = "0"
+
+            $scope.waiting = true 
+
+            postApp();
+            
+        }
+        
+        var postApp = _.debounce(function(){
+            $http.post('cms/user/regCorpAndUsr',$scope.company)
+                .success(function(res) {
+                    if (res.flag) {
+                        $scope.errorMessage = ''
+                        $scope.waiting = false
+                        $scope.success = true
+                        //$state.go('apply_step2')
+                    } else {
+                        $scope.waiting = false
+                        $scope.errorMessage = '注册失败,' + res.info
+                    }         
+                })
+                .error(function(res){
+                    // if error
+                    $scope.waiting = false
+                   $scope.errorMessage = '注册失败，请稍后再试...'
+                })}, 1000);
+    
+
+        $scope.resetError = function() {
+            $scope.errorMessage = ''       
+        }
+
+
+	}]);

@@ -1,0 +1,69 @@
+'use strict';
+angular.module('eqiWebsiteApp')
+	.controller('DownloadCtrl',['$scope', '$http', 'logoName', 'host', function($scope, $http, logoName, host) {
+		$scope.logoName = logoName;
+        $scope.host = host;
+
+		// 随机串，避免验证码 IE 缓存
+		$scope.fakeRandom = (new Date()).getTime();
+
+        $scope.android={ "size":"13.7","date":"2014-09-19","version":"1.0.13"};
+        $scope.iphone={ "size":"21.6","date":"2014-11-10","version":"1.0.0"};
+       // $scope.iphone={};
+        //// 获取apk版本
+        // $http.get('/cms/apk/getApkInfo')
+        //     .success(function(res) {
+        //          $scope.android=res.android;   
+        //     })
+
+		$scope.hoverAndroid = false;
+        $scope.hoverIphone = false;
+
+		$scope.setHover = function() {
+			$scope.hoverAndroid = true;
+		};
+
+        $scope.resetMessages = function(){
+            $scope.errorMessage = '';
+            $scope.Message =''
+        };
+
+		$scope.setUnHover = function() {
+			$scope.hoverAndroid = false;
+		};
+        // 刷新校验码
+		$scope.refreshCode = function() {
+			$scope.fakeRandom = (new Date()).getTime();
+		};
+
+        $scope.sendDownloadURL = function() {
+            var reg = /^0?(13|14|15|18|17)[0-9]{9}$/
+            
+            if (!$scope.telephone || !reg.test($scope.telephone)) {
+                $scope.Message = ''
+                $scope.errorMessage = '请输入正确的手机号'
+                return
+            }
+
+            if (!$scope.captchar_code || $scope.captchar_code.length !== 4) {
+                $scope.Message = ''
+                $scope.errorMessage = '请输入正确的验证码'
+
+                return
+            }
+
+            $http.get('downloadurl', { 'params': {
+                'captchar_code': $scope.captchar_code,
+                'telephone': $scope.telephone
+            }}).success(function(res) {
+                $scope.errorMessage=''
+                $scope.Message='短信已发送'
+                $scope.refreshCode();           
+            })
+            .error(function(res) {
+                // if error
+                $scope.Message = ''
+                $scope.errorMessage = '请输入正确的验证码'
+            })
+        }
+}]);

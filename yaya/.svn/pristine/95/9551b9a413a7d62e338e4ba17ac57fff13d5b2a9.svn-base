@@ -1,0 +1,47 @@
+# 官网服务器地址
+# 外网 ip: 218.205.81.21
+# 内网 ip: 10.3.1.51
+# 密码：wi!wialm
+
+修改 app.js  host 改为 '218.205.81.10'
+修改 download.html和main.html 二维码图片改为 'qr_code.png'
+
+# 若只更新了前端代码部分，则只需上传前端资源文件
+scp -r python/static/* root@218.205.81.21:/home/eqi/static/
+
+
+
+# 江西服务器地址
+# server ip: 117.169.32.136
+# password: ICT20!$jtet
+
+# 若只更新了前端代码部分，则只需上传前端资源文件
+scp -P 23433 -r python/static/* root@117.169.32.136:/home/eqi/static/
+
+# 若更新了 python 后端代码，需重启服务
+# 先登录服务器
+ssh -p 23433 root@117.169.32.136
+
+# 然后切换至 /home/eqi/ 目录，然后重启服务
+killall -9 gunicorn
+nohup gunicorn -w 4 -b 0.0.0.0:80 app:app&
+
+
+
+＃ 测试服务器地址
+＃ 外网 ip: 218.205.81.12
+＃ 密码: N#.oP@xD
+
+# 若只更新了前端代码部分，则只需上传前端资源文件
+scp -r python/static/* root@218.205.81.12:/root/eqi/static/
+
+# 然后切换至 /root/eqi/ 目录，然后重启服务
+killall -9 gunicorn
+nohup gunicorn -w 4 -b 0.0.0.0:8080 app:app&
+
+
+/usr/local/bin/python app.py
+curl "127.0.0.1/code" -I
+
+
+

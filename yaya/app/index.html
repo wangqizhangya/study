@@ -1,0 +1,139 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" id="ng-app" ng-app> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" id="ng-app" ng-app> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html > <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>幸运大转盘</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=0" name="viewport" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+        <meta content="telephone=no" name="format-detection" />
+      
+        <!-- Place favicon.ico and apple-click-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css({.tmp,app}) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <!--[if lte IE 8]>
+         <script>
+             document.createElement('fullpage');
+         </script>
+        <![endif]-->
+        <!--base href="/register/"-->
+    </head>
+    <body ng-app="xydzpApp" ng-controller="AppCtrl" ng-cloak>
+        <div class="mianPage" ng-init="init()">
+            <div class="roulette-wraper">
+                <div class="roulette">
+                </div>
+                <div class="spinner-wraper">
+                    <div class="pointer"></div>
+                    <div class="spinner" ng-click="clickHandler()"></div>
+                </div>
+            </div>
+            <div class="center-block desc-title">活 动 说 明</div>
+            <div class="center-block desc-wraper">
+                活动时间: 2017年6月26日——7月26日
+            </div>
+            <div class="center-block desc-wraper">
+                参与对象: 活动期间，下载并登陆APP用户。
+            </div>
+            <div class="center-block desc-wraper last">
+                活动内容: 活动期间，首次下载并登录和办公APP的用户即可获得省内20M流量奖励，分享朋友圈可参与大转盘抽奖活动，每天均有一次机会，奖品分为10M省内流量、30M省内流量、100M省内流量、500M省内流量、1G省内流量，共五种奖品类型，用户所得的流量奖励可累加使用，十个工作日内赠送到用户手机上。
+            </div>
+            <div class="footer">
+                <img class="footer-bg" src="images/footer-pic.png">
+                <div  class="bottom-button"  ng-click="open('rule')" alt=""></div>
+            </div>
+            <div class="modal-back" ng-show="app.prizeOpen">
+                <div  class="close-btn" ng-click="close('prize')"></div>
+                <div class="modal-pannel prize">
+                    <p>哇，恭喜您获得了{{app.prizeSize}}</p>
+                    <p>省内流量奖励！</p>
+                    <p>明天还有机会，不要忘记哦！</p>
+                </div>
+            </div>
+            <div class="modal-back" ng-show="app.thanksOpen">
+                <div  class="close-btn" ng-click="close('thanks')"></div>
+                <div class="modal-pannel thanks">
+                    <img src="images/thanks_pic.png">
+                </div>
+            </div>
+            <div class="modal-back" ng-show="app.shareOpen">
+                <div  class="close-btn" ng-click="close('share')"></div>
+                <div class="modal-pannel thanks">
+                    <img src="images/share.png">
+                </div>
+            </div>
+            <div class="modal-back" ng-show="app.noChanceOpen">
+                <div  class="close-btn" ng-click="close('noChance')"></div>
+                <div class="modal-pannel thanks">
+                    <img src="images/noChance.png">
+                </div>
+            </div>
+            <div class="modal-back" ng-show="app.ruleOpen">
+                <div class="close-btn right" ng-click="close('rule')"></div>
+                <div class="modal-pannel rule">
+                    <p>（1）参与活动的用户必须是成功下载并注册登录中国移动和办公APP的用户。</p>
+                    <p>（2）用户所得流量会在10个工作日内赠送到用户手机上，在活动结束后10个工作日内予以补赠。</p>
+                    <p>（3）流量为省内通用流量，优先级低于固定套餐，在无流量或固定套餐超出时可用，当月账期有效，不参与结转，在山东省内2G/3G/4G状态下均可使用。</p>
+                    <p>（4）手机号码必须真实有效且状态正常，如因客户提供信息原因或手机状态原因导致流量无法赠送，我公司不进行补送。</p>
+                    <p>（5）欠费、停机、未进行实名认证客户，将影响流量的赠送；MO套餐、无极变速套餐、数据卡、随心卡、行业应用卡、信息机用户无法享受流量赠送。</p>
+                    <p>（6）活动期间若出现非正常参与活动行为，经核实后一律取消获奖资格。</p>
+                </div>
+            </div>
+        </div>
+        <div class="toaster-wraper" ng-show="toast.show">
+            <div class="toaster center-block"  ng-click="toast.show=false">
+                {{toast.msg}}
+            </div>
+        </div>
+
+        <script id="modal.html" type="text/ng-template" >
+          <div class="page-infoInstance">
+            <div class="modal-header clearfix" ng-class="{noLine:title==''}">
+              <p class="modal-title pull-left">{{title}}</p>
+            </div>
+            <div class="modal-body" style="word-break: break-all;">
+               下载安装和办公<br>参加幸运大转盘抽奖活动
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-default" ng-click="cancel()">取消</button>
+              <button class="btn btn-default" ng-click="ok()">确定</button>
+            </div>
+          </div>
+        </script>
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/es5-shim/es5-shim.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/json3/lib/json3.min.js"></script>
+        <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/respond/dest/respond.src.js"></script>
+        <script src="bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/services/addressService.js"></script>
+        <script src="scripts/services/ajaxService.js"></script>
+        <script src="scripts/jquery.fortune.js"></script>
+        <script src="scripts/phantom-polyfills.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

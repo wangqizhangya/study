@@ -1,0 +1,247 @@
+'use strict';
+var eqiWebsiteApp = angular.module('eqiWebsiteApp', [
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ui.router',
+    'ui.sortable',
+    'ui.bootstrap'
+  ]).value('logoName','一起')/*产品名称 江西：集团E通 */
+    .value('host', 'http://218.205.81.42') //218.205.81.10 //test.eqiwork.com//innerdev.eqiwork.com
+    .config(['$locationProvider', '$httpProvider', '$stateProvider', '$urlRouterProvider', '$anchorScrollProvider', function($locationProvider, $httpProvider, $stateProvider, $urlRouterProvider, $anchorScrollProvider) {
+   // $locationProvider.html5Mode(true).hashPrefix('!');
+    $anchorScrollProvider.disableAutoScrolling();
+
+    $stateProvider
+      //主页
+      .state('home', {
+        url: '/',
+        views: {
+          'headerView':{
+            templateUrl: 'views/header.html',
+            controller: 'MainCtrl',
+          },
+          'contentView':{
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl',
+          },
+          'footerView':{
+            templateUrl: 'views/nofooter.html',
+          }
+        }
+      })
+
+      //移动端主页
+      .state('mobile', {
+        url: '/mobile',
+        views: {
+          'headerView':{
+            templateUrl: 'views/noheader.html',
+          },
+          'contentView':{
+            templateUrl: 'views/mobile.html',
+            controller: 'MobileCtrl',
+          },
+          'footerView':{
+            templateUrl: 'views/nofooter.html',
+          }
+        }
+      })
+
+
+      //功能
+      .state('function', {
+        url: '/function',
+        views:{
+          'headerView':{
+            templateUrl: 'views/header.html',
+            controller: 'MainCtrl',
+          },
+          'contentView':{
+            templateUrl: 'views/function.html',
+            controller: 'FunctionCtrl',
+          },
+          'footerView':{
+            templateUrl: 'views/footer.html',
+          }
+        }
+      })
+   
+      //下载
+      .state('download', {
+        url: '/download',
+        views:{
+          'headerView':{
+            templateUrl: 'views/header.html',
+            controller: 'MainCtrl'
+          },
+          'contentView':{
+            templateUrl: 'views/download.html',
+            controller: 'DownloadCtrl'
+          },
+          'footerView':{
+            templateUrl: 'views/footer.html',
+          }
+        }
+      })
+
+      // 关于我们
+      .state('contact', {
+        url: '/contact',
+        views:{
+          'headerView':{
+            templateUrl: 'views/header.html',
+            controller: 'MainCtrl'
+          },
+          'contentView':{
+            templateUrl: 'views/help.html',
+            controller: 'HelpCtrl'
+          },
+          'footerView':{
+            templateUrl: 'views/footer.html',
+          }
+        }
+      })
+      //使用指南
+      .state('help', {
+        url: '/help',
+        views:{
+          'headerView':{
+            templateUrl: 'views/header.html',
+            controller: 'MainCtrl'
+          },
+          'contentView':{
+            templateUrl: 'views/help.html',
+            controller: 'HelpCtrl'
+          },
+          'footerView':{
+            templateUrl: 'views/footer.html',
+          }
+        }
+      })
+      //用户协议
+      .state('protocol', {
+        url: '/protocol',
+        views:{
+          'headerView':{
+            templateUrl: 'views/header.html',
+            controller: 'MainCtrl'
+          },
+          'contentView':{
+            templateUrl: 'views/help.html',
+            controller: 'HelpCtrl'
+          },
+          'footerView':{
+            templateUrl: 'views/footer.html',
+          }
+        }
+      })
+      //常见问题
+      .state('qa', {
+        url: '/qa',
+        views:{
+          'headerView':{
+            templateUrl: 'views/header.html',
+            controller: 'MainCtrl'
+          },
+          'contentView':{
+            templateUrl: 'views/help.html',
+            controller: 'HelpCtrl'
+          },
+          'footerView':{
+            templateUrl: 'views/footer.html',
+          }
+        }
+      })
+
+
+      //申请试用
+      .state('apply',{
+        url: '/apply',
+        views:{
+          'headerView':{
+            templateUrl: 'views/noheader.html',
+            controller: 'MainCtrl'
+          },
+          'contentView':{
+            templateUrl: 'views/apply.html',
+            controller: 'applyCtrl'
+          },
+          'footerView':{
+            templateUrl: 'views/footer.html',
+          }
+        }
+      })
+      
+
+      //博客
+      .state('blog', {
+        url: '/blog',
+        views:{
+          'headerView':{
+            templateUrl: 'views/header.html',
+            controller: 'MainCtrl'
+          },
+          'contentView':{
+            templateUrl: 'views/blog.html',
+          //controller: 'BlogCtrl'
+          },
+          'footerView':{
+            templateUrl: 'views/footer.html',
+          }
+        }
+      })
+
+      // 登录
+      .state('signin', {
+        url: '/signin',
+        templateUrl: 'views/signin.html',
+        //controller: 'SignInCtrl'
+      })
+      // 注册
+      .state('signup', {
+        url: '/signup',
+        templateUrl: 'views/signup.html',
+        //controller: 'SignUpCtrl'
+      })
+
+      //关于我们
+      .state('about', {
+        url: '/about',
+        templateUrl: 'views/about.html',
+        //controller: 'AboutCtrl'
+      })
+ 
+      //支持中心
+      .state('support', {
+        url: '/support',
+        templateUrl: 'views/support.html',
+        //controller: 'SupportCtrl'
+      });
+
+    // url 重定向
+    var system ={  
+        win : false,  
+        mac : false,  
+        xll : false  
+        };
+    var p = navigator.platform;
+    system.win = p.indexOf("Win") == 0;  
+    system.mac = p.indexOf("Mac") == 0;  
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);  
+
+    //PC端
+    if(system.win||system.mac||system.xll){
+      $urlRouterProvider
+        .when('/apply', '/apply_step1')
+        //.when('/home','/')
+        .otherwise('/');
+    }
+    //移动端
+    else{  
+      $urlRouterProvider
+        .when('/mobile', '/mobile')
+        .otherwise('/mobile');     
+    }             
+
+  }]);

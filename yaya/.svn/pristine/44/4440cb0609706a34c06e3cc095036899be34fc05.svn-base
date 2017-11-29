@@ -1,0 +1,265 @@
+'use strict';
+
+angular.module('eqiWebsiteApp')
+.controller('FunctionCtrl',['$scope', '$location', '$anchorScroll','$rootScope', function ($scope, $location, $anchorScroll,$rootScope) {
+
+        
+    }])
+
+    .directive('fullpage', ['$window','$rootScope', FullPage])
+    .directive('fullpageHref', ['$window', FullpageHref]);
+
+    var nav,
+        pageHeight,
+        pageIndex,
+        pages,
+        bottom,
+        scrolling,
+        lastAnimation;
+
+    function FullpageHref(){
+        function fullpageHref($scope, $element){
+          $element.css('cursor', 'pointer');
+             function getElementsByClassName(className){
+                if(!document.getElementsByClassName){  
+                    document.getElementsByClassName = function(className){  
+                        var children = (document).getElementsByTagName('*');  
+                        var elements = new Array();  
+                        for (var i=0; i<children.length; i++){  
+                            var child = children[i];  
+                            var classNames = child.className.split(' ');  
+                            for (var j=0; j<classNames.length; j++){  
+                                if (classNames[j] == className){   
+                                    elements.push(child);  
+                                    break;  
+                                }  
+                            }  
+                        }   
+                        return elements;  
+                    };  
+                }
+                return  document.getElementsByClassName(className);
+            }
+            $element.on('click', function(){
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i].id == $scope.scrollTo){
+                        pageIndex = i;
+                    }
+                }
+                angular.element(pages[0]).css(
+                    'marginTop', '-' + pageHeight * pageIndex + 'px'
+                );
+                
+               
+
+
+                angular.element(getElementsByClassName('br-fullpage-nav-item')).removeClass('active');
+                angular.element(getElementsByClassName('br-fullpage-nav-item')[pageIndex]).addClass('active');
+                sessionStorage.setItem('br-fullpage-index', pageIndex);
+            });
+        }
+
+        return {
+            scope: {
+                scrollTo: '@fullpageHref'
+            },
+            restrict: 'A',
+            link: fullpageHref
+        }
+    }
+
+    function FullPage($window,$rootScope){
+        function fullPage($scope,  $element, $attr ){
+            function getElementsByClassName(className){
+                if(!document.getElementsByClassName){  
+                    document.getElementsByClassName = function(className){  
+                        var children = (document).getElementsByTagName('*');  
+                        var elements = new Array();  
+                        for (var i=0; i<children.length; i++){  
+                            var child = children[i];  
+                            var classNames = child.className.split(' ');  
+                            for (var j=0; j<classNames.length; j++){  
+                                if (classNames[j] == className){   
+                                    elements.push(child);  
+                                    break;  
+                                }  
+                            }  
+                        }   
+                        return elements;  
+                    };  
+                }
+                return  document.getElementsByClassName(className);
+            }
+            pages = getElementsByClassName($attr.pageClass);
+            nav = getElementsByClassName('br-fullpage-nav')[0];
+            pageHeight = $window.innerHeight  || document.documentElement.clientHeight ||document.body.clientHeight;
+            scrolling = false;
+            bottom = false;
+
+            //retrieve page index from session storage
+            pageIndex = sessionStorage.getItem('br-fullpage-index');
+            if (pageIndex < 0){
+                pageIndex = 0;
+            }
+
+            //add fullpage class
+            angular.element(pages).addClass('br-fullpage');
+
+            //add menu items
+            //for (var i = 0; i<pages.length; i++){
+              //  angular.element(nav).append('<li><i class="br-fullpage-nav-item"></i></li>');
+           // }
+            //align menu in middle
+            nav.style.marginTop = (0 - (pages.length * 17)) + 'px';
+            angular.element(getElementsByClassName('br-fullpage-nav-item')[pageIndex]).addClass('active');
+            angular.element(pages[0]).css(
+                'marginTop', '-' + pageHeight * pageIndex + 'px'
+            );
+             angular.element(pages).css(
+                    'height', pageHeight + 'px'
+                );
+
+            //paginate function
+            function paginate(delta){
+
+                var timeNow = new Date().getTime();
+                // Cancel scroll if currently animating or within quiet period
+                if(timeNow - lastAnimation < 1000) {
+                    return;
+                }
+
+                if (!scrolling){
+                    if (delta > 0) {
+                        prevPage();
+                    }
+                    else {
+                        nextPage();
+                    }
+                    lastAnimation = timeNow;
+                }
+                angular.element(pages[0]).css(
+                    'marginTop', '-' + pageHeight * pageIndex + 'px'
+                );
+
+                angular.element(getElementsByClassName('br-fullpage-nav-item')).removeClass('active');
+                angular.element(getElementsByClassName('br-fullpage-nav-item')[pageIndex]).addClass('active');
+                sessionStorage.setItem('br-fullpage-index', pageIndex);
+
+                setTimeout(function () {
+                    scrolling = false;
+                }, 1200);
+            }
+            
+            function prevPage() {
+
+                if (pageIndex > 0) {
+                    if(bottom){
+
+                        angular.element(getElementsByClassName('br-fullpage-wrapper')).css(
+                        'marginTop','0' );
+                        bottom = false;
+                        return;
+
+                    }
+
+                    scrolling = true;
+                    pageIndex--;
+                }else{
+                    scrolling = true;
+                	if($rootScope.headerClass==='hidden'){
+	                	$rootScope.$apply(function() {
+						  $rootScope.headerClass = ''
+						});
+	            	}
+                }
+                	
+            }
+
+            function nextPage() {
+            	if($rootScope.headerClass===''){
+                    scrolling = true;
+            		$rootScope.$apply(function() {
+					  $rootScope.headerClass = 'hidden'
+					});
+            		return;
+            	}
+                if (pageIndex < (pages.length-1)){
+                    scrolling = true;
+                    pageIndex++;
+                }else{
+                  
+                    angular.element(getElementsByClassName('br-fullpage-wrapper')).css(
+                    'marginTop','-90px');
+                    bottom = true;
+                    //pageIndex++;
+                }
+            }
+
+            function mouseScroll(e){
+                var event = window.event || e.originalEvent || e;
+                var delta = event.detail? event.detail*(-120) : event.wheelDelta;
+                paginate(delta);
+            }
+
+            var startTouchY;
+            function startTouch(e){
+                startTouchY = e.pageY;
+            }
+            function endTouch(e){
+                var delta = e.pageY - startTouchY;
+                paginate(delta);
+            }
+
+            //Event Bindings
+            angular.element(document).bind("mousewheel", mouseScroll); //IE9, Chrome, Safari, Opera
+            angular.element(document).bind("onmousewheel", mouseScroll); //IE 6-8
+            angular.element(document).bind("DOMMouseScroll", mouseScroll); //Firefox
+
+        
+            /*
+            会绑定IE鼠标移动事件
+            angular.element(document).bind("touchstart", startTouch); //Mobile
+            angular.element(document).bind("pointerdown", startTouch); //Mobile
+            angular.element(document).bind("MSPointerDown", startTouch); //Mobile
+
+            angular.element(document).bind("touchmove", endTouch); //Mobile
+            angular.element(document).bind("pointermove", endTouch); //Mobile
+            angular.element(document).bind("MSPointerMove", endTouch); //Mobile
+            */
+
+            //on resize reset pageHeight
+            angular.element($window).bind("resize", function(){
+                pageHeight = $window.innerHeight || document.documentElement.clientHeight ||document.body.clientHeight;
+                angular.element(pages[0]).css(
+                    'marginTop', '-' + pageHeight * pageIndex + 'px'
+                );
+                angular.element(pages).css(
+                    'height', pageHeight + 'px'
+                );
+
+
+            });
+
+
+            angular.element(getElementsByClassName('br-fullpage-wrapper')).on('$destroy', function() {
+                    angular.element(document).off('mousewheel');
+                    angular.element(document).off('onmousewheel');
+                    angular.element(document).off('DOMMouseScroll');
+            });
+        }
+
+        return {
+            template:   '<section class="br-fullpage-wrapper">' +
+                            '<section ng-transclude>' +
+                            '</section>' +
+                            //'<ul class="br-fullpage-nav"></ul>' +
+                        '</section>',
+            restrict: 'A',
+            transclude: true,
+            replace: true,
+            link: fullPage
+        }
+    }
+       
+
+                

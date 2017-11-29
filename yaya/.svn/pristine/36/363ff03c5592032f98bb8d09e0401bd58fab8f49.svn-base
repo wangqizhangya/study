@@ -1,0 +1,158 @@
+@charset "utf-8";
+.page-apply{
+	
+	background:url('../images/apply-banner.png') no-repeat top center;
+	min-height:500px;
+	margin-bottom:40px;
+	.container{
+		position: relative;
+	}
+	.apply-panel{
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:250px;
+		width:400px;
+	}
+	.title{
+		padding-left:20px;
+	}
+	.apply-header {
+		position: absolute;
+		width: 280px;
+		height: 50px;
+		top: 20px;
+		left: 150px;
+		span{
+			font-size:24px;
+			line-height: 24px;
+			color:#c7eaff;
+			padding:12px 10px;
+		}
+		i{
+			width: 7px;
+			height: 7px;
+			border: 1px solid white;
+			border-radius: 7px;
+			background-color: white;
+			margin: 20px 0px 20px 10px;
+		}
+		img{
+			width:98px;
+		}
+		
+	}
+
+	.control-label{
+		float: left;
+		width:120px;
+		padding: 7px 15px;
+		text-align:right;
+		.required-state {
+			margin-left: 2px;
+			color: #fff;
+		}
+		.is-required {
+			color: #f00;
+		}
+
+	}
+	.form-group{
+		position:relative;
+		a{
+			color:#428bca;
+		}
+	}
+	p.tip-error {
+		position: absolute;
+		right: -130px;
+		top: 6px;
+		color: red;
+	}
+	
+	input[type=text],
+	input[type=password],
+	input[type=email],{
+		float:left;
+		width: 250px;
+	}
+	select{
+		margin-right: 10px;
+		width: 120px;
+	}
+	select:last-child{
+		margin-right: 0;
+	}
+	select:only-of-type{
+		width:250px;
+	}
+	.staffsize{
+		width:250px !important;
+	}
+    .btn{
+    	padding: 9px 35px;
+		font-size: 18px;
+		margin-left:105px;
+		outline:none;
+		background: #37ad00;
+		border: 1px solid #37ad00;	
+		&:hover ,&:focus{
+		    	color:white;
+        		opacity: 0.8;
+        		filter:Alpha(opacity=80);
+		    }	
+    }
+    .alert-danger {
+		background-color: #f2dede;
+		border-color: #ebccd1;
+		color: #b94a48;
+		margin-left: 105px;
+		margin-right:15px;
+	}
+	.agreement {
+		margin: 0 0 10px 105px;
+		a{
+			margin: 0 2px;
+			color: #428BCA;
+			text-decoration: underline;
+		}
+	}
+	.waiting-gif{
+		width:10%;
+		margin-left:35px;
+	}
+	.success{
+
+		.center-image{
+			width: 70px;
+			margin-left: auto;
+			margin-right: auto;		
+		}
+		.signup-success {
+			a {
+				margin: 0 2px;
+				color: #428BCA;
+				text-decoration: underline;
+			}
+		}	
+
+		img{
+			width:70px;
+			//margin-left:120px;
+			margin-bottom:20px;
+
+		}
+	    .btn{
+	    	color: white;
+	    	padding: 9px 35px;
+			font-size: 18px;
+			margin: 0px 130px;
+	    }
+	    p{
+	    	margin: 0 0 30px;
+			padding-right: 60px;
+			padding-left: 60px;
+	    }
+
+	}
+
+}

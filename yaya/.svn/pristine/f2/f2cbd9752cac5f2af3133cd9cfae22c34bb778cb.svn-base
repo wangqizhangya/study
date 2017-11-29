@@ -1,0 +1,249 @@
+@charset "utf-8";
+/*body{
+  font-family: Arial,Helvetica,"Hiragino Sans GB","冬青黑体","Microsoft YaHei","微软雅黑","宋体"; 
+}*/
+.top-page{
+	background-image:url('../images/bg.png');
+  /*background: url('../images/banner.png') no-repeat left;*/
+	/*background-repeat:repeat-x;*/
+	background-repeat:no-repeat;
+	background-position:center;
+  min-height: 480px;
+	/*background-size-width: 100%;*/
+  /*text-align: center;*/
+}
+.tip-on-top
+{
+  /*display: none;*/
+  /*position: absolute;*/
+  margin: auto;
+  width: 100%;
+  /*height: 9%;*/
+  max-width: 1024px;
+  /*background-color: black;*/
+  background: rgba(0,0,0,0.3);
+  color:white;
+  /*opacity: 0.5;*/
+  z-index:1;
+}
+.left-part-in-tip{
+	/*width: 20%;*/
+ 	height: 100%;
+  display: inline-block;
+  vertical-align:middle;
+  /*text-align: center;*/
+ 	padding-left:10px;
+}
+.logo-in-tip{
+	/*margin-top: 5%;*/
+	/*margin-left: 10%;*/
+  /*margin: auto;*/
+  margin-top: 5px;
+  margin-bottom: 5px;
+	width: 70%;
+  max-width: 70px;
+	height: auto;
+}
+.middle-part-in-tip{
+  /*width: 70%;*/
+  height: 100%;
+  /*margin-left: 1px;*/
+  display: inline-block;
+  vertical-align:middle;
+  /*padding-left:5px;*/
+}
+.upper-character-in-tip{
+  text-indent: -10px;
+  font-size: 20px;
+  font-weight:100;
+}
+.nether-character-in-tip{
+  text-indent: -10px;
+  font-size: 12px;
+  font-weight:100;  
+}
+.right-part-in-tip{
+  /*position: absolute;*/
+  max-width: 70px;
+  /*width: auto;*/
+  height: 100%;
+  float: right;
+  margin-right: 10px;
+  margin-top: 15px;
+  display: inline-block;
+  /*vertical-align:middle;*/
+  /*padding-left: 10%;*/
+  /*text-align: middle;*/
+  /*padding:10px;*/
+}
+.download-or-open{
+  /*position: absolute;*/
+  display: none;
+  border-radius: 3px;
+  border: 1px solid;
+  padding-top: 3px;
+
+  /*when download*/
+  width: 70px; 
+  /*margin-right: 20px;*/
+
+  /*when open*/
+/*  width: 50px; 
+  margin-left: 30%;*/
+
+  height: 25px;
+  text-align: center;
+  font-size: 13px;
+  font-weight:100; 
+  /*background-color: #808080;*/
+  background: rgba(0,0,0,0.2);
+}
+.content-in-top-page{
+  /*position: absolute;*/
+  /*margin-top: 15%;*/
+  /*padding-top: 60px;*/
+  text-align: center;
+  color: white;
+}
+
+.central-logo{
+  min-height: 100px;
+  min-width: 100px;
+  margin: 0 auto; 
+  /*max-width: 150px;*/
+  /*height: auto;  */
+
+}
+.character-under-logo{
+  font-size: 20px;
+  font-weight:100;  
+  padding-top: 12%;
+}
+.download-area{
+  /*margin-top:15%;*/
+  font-weight:100; 
+  padding-bottom: 10%;
+  text-align: center;
+  color: white;   
+}
+.ios-download-area{
+  /*display: block;*/
+  display: none;
+}
+.android-download-area{
+  /*display: block;*/
+  display: none;
+}
+.main-download-info{
+  width: 210px;
+  background-color: rgba(0,0,0,1);
+  vertical-align:middle;
+  border-radius: 5px;
+  height: 50px;
+  font-size: 20px;   
+  margin: auto;
+}
+.icon-area-in-ios-download-area{
+  display: inline-block;  
+  margin-top: 2px;
+}
+.icon-area-in-android-download-area{
+  display: inline-block;  
+  margin-top: 5px;  
+}
+.icon-in-download-area{
+  width: 40px;
+  height: 40px;
+}
+.character-in-ios-download-area{
+  vertical-align:middle;
+  display: inline-block; 
+  margin-top: 5px;
+}
+.character-in-android-download-area{
+  vertical-align:middle;
+  display: inline-block; 
+  /*margin-bottom: 30px;  */
+}
+.other-download-info{
+  font-size: 12px; 
+  line-height:3px;
+  margin-top: 20px;  
+}
+.other-download-info p span{
+  color: #333333;
+}
+.windows-phone-download-area{
+  display: none;
+}
+.other-download-area{
+  display: none;
+}
+.detailed-info{
+  margin-top: 50px;
+  text-align: center;
+  width: 100%;
+}
+.heading-of-detail{
+  font-weight:600;
+  letter-spacing: 1px;
+  font-size:30px; 
+  font-family: SimHei;
+}
+.caption-of-detail{
+  margin: 20px auto;
+  font-size: 13px;
+  line-height:7px;
+}
+.image-of-detail{
+  width: 80%;
+  height: auto;
+  max-width: 500px;
+}
+.go-to-top-area{
+  text-align: center;
+  width: 15%;
+  margin: 0 auto 50px auto;
+}
+.go-to-top-icon{
+  /*width:80%;*/
+  max-width: 40px;
+  height: auto;
+}
+.tip-in-wechat {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  opacity: 0.8;
+  z-index: 50;
+}
+
+.arrow-area {
+  text-align: right;
+  margin-right:20px;
+  margin-top:20px;
+}
+.arrow-body{
+  width: 50px;
+  height: 50px;
+}
+.content-in-wechat-tip{
+  text-align:center;
+  font-size:15px;
+}
+.words-in-content{
+  margin-top:50px;
+}
+.close-the-tip {
+  margin: 80px auto 0;
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 4px 20px;
+  width: 100px;
+  text-align: center;
+}

@@ -1,0 +1,171 @@
+<div class="top-page" id="top_page">
+	<div class="tip-on-top" id="tip_on_ios">
+		<div class="left-part-in-tip">
+			<img src="images/small_logo.png" class="logo-in-tip" />
+		</div>
+		<div class="middle-part-in-tip">
+			<div class="upper-character-in-tip">{{logoName}}</div>
+			<div class="nether-character-in-tip">简单工作</div>
+		</div>
+		<div class="right-part-in-tip" id="right_part_in_tip">
+			<div class="download-or-open" id="download_app_in_tip" ng-click="downloadByType(1)">立即下载</div>
+			<!-- <div class="download-or-open" id="open_app_in_tip">打开</div> -->
+		</div>
+	</div>
+	<div class="content-in-top-page" id="content_in_top_page">
+		<div>
+			<img src="images/big_logo.png" class="central-logo" id="central_logo">
+		</div>
+		<div class="character-under-logo">一起，简单工作</div>
+		<div class="download-area" id="download_area_upper">
+			<div id="ios_download_area_upper" class="ios-download-area">
+				<div class="main-download-info" id="ios_download_link_upper" ng-click="downloadByType(1)">
+					<div class="icon-area-in-ios-download-area">
+						<img src="images/icon_ios.png" class="icon-in-download-area"/>
+					</div>
+					<div class="character-in-ios-download-area">
+						iOS版本下载
+					</div>	
+				</div>
+				<div class="other-download-info">
+					<p>{{logoName}}还同时支持Android、Web版，可使用Android移动端</p>
+					<p>或电脑访问<span> http://yiqiapp.cn </span>下载使用</p>
+				</div>				
+			</div>
+			<div id="android_download_area_upper" class="android-download-area">
+				<div class="main-download-info" id="android_download_link_upper" ng-click="downloadByType(2)">
+					<div class="icon-area-in-android-download-area">
+						<img src="images/icon_Android.png" class="icon-in-download-area"/>
+					</div>
+					<div class="character-in-android-download-area">
+						Android版本下载
+					</div>
+				</div>
+				<div class="other-download-info">
+					<p>{{logoName}}还同时支持iOS、Web版，可使用iOS移动端</p>
+					<p>或电脑访问<span> http://yiqiapp.cn </span>下载使用</p>
+				</div>
+			</div>
+			<div id="windows_phone_download_area" class="windows-phone-download-area other-download-info">
+					<p>{{logoName}}暂时还没有WP版，不过同时支持Web、Android、</p>
+					<p>iOS版，可使用电脑或其他相应移动端访问</p>
+					<p><span>  http://yiqiapp.cn </span>下载使用</p>					
+			</div>
+			<div id="other_download_area" class="other-download-area other-download-info">
+					<p>{{logoName}}同时支持Web、Android、iOS版，可使用电脑或其他</p>
+					<p>相应移动端访问<span> http://yiqiapp.cn </span>下载使用</p>							
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="detailed-info">
+	<div class="heading-of-detail">
+		任务管理
+	</div>
+	<div class="caption-of-detail">			
+		<p>轻松实现任务发布、分配、进度控制、标记完成，</p>
+		<p>高效便捷的可交互性</p>
+	</div>
+	<div>
+		<img src="images/function_func01.png" class="image-of-detail">
+	</div>
+</div>
+<div class="detailed-info">
+	<div class="heading-of-detail">
+		即时通讯
+	</div>
+	<div class="caption-of-detail">			
+		<p>支持文本、表情、图片、语音、视频、文件等多媒体</p>
+		<p>消息-特有的消息转短信功能</p>
+	</div>
+	<div>
+		<img src="images/function_func02.png" class="image-of-detail">
+	</div>
+</div>
+<div class="detailed-info">
+	<div class="heading-of-detail">
+		音频、视频电话
+	</div>
+	<div class="caption-of-detail">			
+		<p>免费的点对点音视频通话-更流畅、更清晰的</p>
+		<p>多人电话会议</p>
+	</div>
+	<div>
+		<img src="images/function_func03.png" class="image-of-detail">
+	</div>
+</div>
+<div class="detailed-info">
+	<div class="heading-of-detail">
+		企业通讯录
+	</div>
+	<div class="caption-of-detail">			
+		<p>自由创建多层级组织架构，清晰展现部门层级和员工</p>
+		<p>信息,一键搜索企业联系人</p>
+	</div>
+	<div>
+		<img src="images/function_func04.png" class="image-of-detail">
+	</div>
+</div>
+<div class="detailed-info">
+	<div class="heading-of-detail">
+		企业邮箱
+	</div>
+	<div class="caption-of-detail">			
+		<p>与企业通讯录深度融合，支持管理多个邮箱</p>
+		<p>新邮件到达通知</p>
+	</div>
+	<div>
+		<img src="images/function_func05.png" class="image-of-detail">
+	</div>
+</div>
+<div class="detailed-info">
+	<div class="heading-of-detail">
+		应用
+	</div>
+	<div class="caption-of-detail">			
+		<p>提供海量办公工具，满足企业个性化定制、购买</p>
+		<p>集成适合企业的独一无二的客户端</p>
+	</div>
+	<div>
+		<img src="images/function_func06.png" class="image-of-detail">
+	</div>
+</div>
+<div class="download-area" id="download_area_nether">
+	<div id="ios_download_area_nether" class="ios-download-area">
+		<div class="main-download-info"  id="ios_download_link_nether" ng-click="downloadByType(1)">
+			<div class="icon-area-in-ios-download-area">
+				<img src="images/icon_ios.png" class="icon-in-download-area"/>
+			</div>
+			<div class="character-in-ios-download-area">
+				iOS版本下载
+			</div>	
+		</div>			
+	</div>
+
+	<div id="android_download_area_nether" class="android-download-area">
+		<div class="main-download-info" id="android_download_link_nether" ng-click="downloadByType(2)">
+			<div class="icon-area-in-android-download-area">
+				<img src="images/icon_Android.png" class="icon-in-download-area"/>
+			</div>
+			<div class="character-in-android-download-area">
+				Android版本下载
+			</div>
+		</div>
+	</div>
+</div>
+<div class="go-to-top-area" id="go_to_top" ng-click="returnTop()">
+	<img src="images/icon_top.png" class="go-to-top-icon">
+</div>
+<div class="tip-in-wechat" id="tip_in_wechat">
+	<div class="arrow-area"><img src="images/arrow_blue.png" class="arrow-body"></div>
+	<div class="content-in-wechat-tip">
+		<div>
+			<h4>微信屏蔽了下载链接。。。</h4>
+			<div class="words-in-content">
+			<p>1、请点击右上角菜单</p><p>2、选择“浏览器中打开”，再下载即可</p>
+			</div>
+		</div>
+		<div class="close-the-tip" ng-click="hideTheTip()">关闭</div>
+	</div>
+</div>				

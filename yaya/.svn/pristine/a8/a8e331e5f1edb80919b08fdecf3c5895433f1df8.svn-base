@@ -1,0 +1,8 @@
+from flask import current_app
+
+
+SMS_AGENT = 'http://sms.eqiwork.com/SMSAgent/sendSMS'
+DOWNLOAD_URL = 'http://t.cn/Rznn366?'
+
+API_HOST = 'http://cms.eqiwork.com'
+

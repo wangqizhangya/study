@@ -1,0 +1,12 @@
+<div class="line"></div>
+<div class="footer center-block"> 
+    <div>
+        <a href="#/contact" >关于我们</a>
+        <a href="#/help"  ng-click = "setActive('/help')">使用指南</a>
+        <a href="#/qa" class="hidden ">常见问题</a>
+        <a href="#/protocol" class="last-a" >用户协议</a> 
+    </div>           
+    <p class="small text">
+        Copyright © 2014-2015 CMCC All Rights Reserved. 网站建议使用分辨率 1024 x 768 以上。
+    </p>
+</div>

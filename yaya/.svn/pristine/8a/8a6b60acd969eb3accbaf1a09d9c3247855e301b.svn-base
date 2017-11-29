@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+.page-download{
+	.download-divs{
+	 	margin-top:28px;
+	 	padding-bottom: 30px;
+		border-bottom: 1px solid #F3F3F3;
+
+	}
+	.download-contant{
+		margin-top:20px;
+		margin-bottom:100px;
+	}
+	.form-border{
+		border:1px solid #DFDFDF;
+		padding:20px;
+		width:100%;
+	}
+
+	.download{
+		
+		padding: 20px 0px 20px 39px;
+	    //font-size: 24px;   
+	    color:white; 
+	    margin:5px 0px;
+	    margin-right:5px;
+
+	}
+	.hover-pannel{
+		text-align: center;
+		padding: 20px;
+		position:relative;
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+		color: #fff;
+	}
+	.download-hover{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background:#000000;
+		background:rgba(0, 0, 0, .4);
+		filter:Alpha(opacity=40);
+		cursor:pointer;
+		.hover-pannel{
+			position:relative;
+		}
+	}
+	
+	.text-contant{
+		padding:8px 10px;
+		width:189px;
+	}
+	#download_android{
+		position:relative;
+		background: #37ad00;
+	}
+	#download_iphone{
+		position:relative;
+		background: #656565;
+	}
+	#download_windows{
+		background: #BEBEBE;
+	}
+	.message-pannel{
+		width:48%; 
+		border-right:1px solid #F3F3F3;
+		padding-right:40px;
+		padding-left:10px;
+		.btn {
+			outline:none;
+			margin:10px 0px;
+		    padding: 13px 20px;
+		    padding-bottom:8px;
+		    font-size: 18px;
+		    background: #37ad00;
+		    border: 1px solid #37ad00;
+
+		    &:hover ,&:focus{
+		    	color:white;
+        		opacity: 0.8;
+        		filter:Alpha(opacity=80);
+		    }
+
+		}
+	}
+	.message-form{
+		margin-top:20px;
+	}
+	.qrCode-form{
+		width:52%; 	
+		padding-left:20px;
+	}
+	.qrCode{
+		width: 200px;
+		height: 200px;
+		margin-top: 30px;
+		margin-bottom: 20px;
+	}
+
+	.form-group {
+	    margin: 10px 0 0;
+	}
+	.form-control {
+	    border-radius: 0;
+	    width: 200px;
+		margin: 0;	
+		&.ng-invalid.ng-dirty {
+			border-color:#FA787E;
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.3);
+		}	
+	}
+
+	.group-verification {	
+		.code-image {
+		    width: 122px;
+		    height: 32px;
+		    border: 1px solid #CFCFCF;
+		    background-color: #E4E4E4;
+		    cursor: pointer;
+		    margin-left:15px;
+		}
+	}
+
+	.alert {
+	    margin: 10px 0 0;
+	    padding: 10px;
+	    border-radius: 0;
+	    font-size: 12px;
+	}
+	.microsoft-yahei{
+		font-family: "微软雅黑";
+	}
+}

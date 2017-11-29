@@ -1,0 +1,45 @@
+'use strict';
+angular.module('eqiWebsiteApp')
+		.controller('HelpCtrl',['$scope', '$location', '$state', 'logoName', 'host', function ($scope, $location, $state, logoName, host) {
+		$scope.logoName=logoName;
+		$scope.host=host;
+
+		// $scope.activeTab = 'useGuide';
+		// if($location.url() === '/help#contact') {
+		// 	$scope.activeTab = 'contact';
+		// };
+		// if($location.url() === '/help#userProtocol') {
+		// 	$scope.activeTab = 'userProtocol';
+		// };
+
+		// console.log($state.current.name)
+
+		switch ($state.current.name) {
+			case 'contact':
+				$scope.activeTab = 'contact'
+				return
+			case 'help':
+				$scope.activeTab = 'help'
+				return
+			case 'protocol':
+				$scope.activeTab = 'protocol'
+				return
+			case 'qa':
+				$scope.activeTab = 'qa'
+				return
+			default:
+				$scope.activeTab = 'help'
+				return
+		}
+		
+		// $scope.isActive = function(checkActive) {
+		// 	return checkActive === $scope.activeTab;
+		// };
+		$scope.navTo = function(stateName) {
+			// $scope.activeTab = stateName;
+			console.log(stateName)
+			$state.go(stateName)
+		};
+	}]);
+  
+

@@ -1,0 +1,174 @@
+'use strict';
+angular.module('eqiWebsiteApp')
+		.controller('MobileCtrl',['$scope', '$location', '$state', 'logoName', 'host', function ($scope, $location, $state, logoName, host) {
+		$scope.logoName=logoName;
+		$scope.host=host;
+
+	var screenHeight = document.documentElement.clientHeight;
+	var screenWidth = document.documentElement.clientWidth;
+	// alert("screenWidth="+screenWidth);
+	// alert("screenHeight="+screenHeight);
+	document.getElementById('top_page').style.height = screenHeight+"px";
+	document.getElementById('content_in_top_page').style.marginTop = screenHeight/7+"px";
+	document.getElementById('download_area_upper').style.marginTop = screenHeight/8+"px";
+	document.getElementById('download_area_nether').style.marginTop = screenHeight/8+"px";
+	document.getElementById('central_logo').style.height = screenHeight/5+"px";
+	document.getElementById('central_logo').style.width = screenHeight/5+"px";
+
+	//If the user has already installed the app, the screen will switch to the app directly.
+	// var iframe = document.createElement('iframe');
+ //    iframe.style.display = 'none';
+ //    iframe.src = 'eqi://eqi/wakeup';    
+ //    setTimeout(function () {
+ //         document.body.appendChild(iframe);
+ //     }, 1000);  
+
+	//Go to the top with scrollable effect
+	var sdelay=0; //record the times in total
+	$scope.returnTop = function() {
+		 window.scrollBy(0,-200);//Only for y vertical-axis
+		 if(document.body.scrollTop>0) { 
+		  sdelay= setTimeout($scope.returnTop,30);
+		 }
+	}
+	// document.getElementById('go_to_top').setAttribute("onclick","returnTop()");
+		
+	var phone_type = 0;
+	var useragent = navigator.userAgent.toLocaleLowerCase();
+
+	var isPageOpenedInWeChat;
+	if(useragent.match(/MicroMessenger/i) == 'micromessenger'){ 
+		isPageOpenedInWeChat = true; 
+    }
+    else{ 
+    	isPageOpenedInWeChat = false; 
+    }
+
+    var isPageOpenedInMobileQQ;
+	if(useragent.match(/qq/i) == 'qq'){
+		if(useragent.match(/mqqbrowser/i)=='mqqbrowser'){
+			isPageOpenedInMobileQQ = false;
+		}
+		else{
+			isPageOpenedInMobileQQ = true;
+		}
+	}else{
+		isPageOpenedInMobileQQ = false;
+	}
+
+	var isPageOpenedInWeibo;
+	if(useragent.match(/weibo/i) == 'weibo'){ 
+		isPageOpenedInWeibo = true; 
+    }
+    else{ 
+    	isPageOpenedInWeibo = false; 
+    }
+
+	if (useragent.indexOf("iphone") != -1 || useragent.indexOf("ipad") != -1 || useragent.indexOf("ios") != -1){
+		// alert("ios");
+		phone_type = 1;
+	}else if(useragent.indexOf("android") != -1 || useragent.indexOf("linux") != -1){
+		 // alert("Android");
+		phone_type = 2;
+	}else if(useragent.indexOf("windows phone") != -1){
+		// alert("Windows Phone");
+		phone_type = 3;
+	}else{
+		// alert("Others")
+		phone_type = 0;
+	}
+ 
+	$scope.downloadByType = function(phone_type){
+		if(isPageOpenedInWeChat){ //If the page is opened in WeChat, there should be a tip.
+			 document.getElementById("tip_in_wechat_or_mobileqq").style.display = "block";
+			 if(phone_type == 1){ //ios
+			 	document.getElementById("tip_in_ios_wechat").style.display = "block";
+			 } 
+			 else if(phone_type == 2) { //android
+				document.getElementById("tip_in_android_wechat").style.display = "block";
+			 }else{
+			 	return;
+			 }	
+		}
+		else if( isPageOpenedInMobileQQ && (phone_type == 1) ){//If the page is opened in iOS Mobile QQ, there should be a tip.
+			document.getElementById("tip_in_wechat_or_mobileqq").style.display = "block";
+			document.getElementById("tip_in_ios_mobile_qq").style.display = "block";
+		}
+		else if(isPageOpenedInWeibo && (phone_type == 1 )){//If the page is opened in iOS Mobile weibo, there should be a tip.
+			document.getElementById("tip_in_wechat_or_mobileqq").style.display = "block";
+			document.getElementById("tip_in_ios_mobile_qq").style.display = "block";
+		}
+		else{
+				/*
+				//If the user has already installed the app, the screen will switch to the app directly.
+				var iframe = document.createElement('iframe');
+			    iframe.style.display = 'none';
+			    iframe.src = 'eqi://eqi/wakeup';    
+			    setTimeout(function () {
+			         document.body.appendChild(iframe);
+			    }, 100);
+			    setTimeout(function () {
+			    */
+		    
+					if(phone_type == 1){ //ios
+					 	// alert("It should be ios download link here.");
+					 	window.location.href ="itms-services:///?action=download-manifest&url=https://dn-eqi.qbox.me/eClient.plist";
+					} 
+					else if(phone_type == 2) { //android
+					 	// alert("It should be android download link here.");
+					 	window.location.href = "http://218.205.81.10/eas/eqiDownload?pm=android";
+					}else{
+						return;
+					}	
+					 				 
+					 /*展会版本
+					 if(phone_type == 1){ //ios
+					 	// alert("It should be ios download link here.");
+					 	window.location.href ="itms-services:///?action=download-manifest&url=https://dn-eclient514.qbox.me/yiqiConf514.plist";
+					 } 
+					 else if(phone_type == 2) { //android
+					 	// alert("It should be android download link here.");
+					 	window.location.href = "http://218.205.81.10/upload/app514/yiqi_regist.apk";
+					 }else{
+					 	return;
+					 }
+					 */
+				 	         
+		  	  	//}, 200);   
+
+		}   		
+
+	} 
+
+	$scope.hideTheTip = function(){
+		document.getElementById("tip_in_wechat_or_mobileqq").style.display = "none";
+	}
+	
+ 	if(phone_type == 1){
+ 		document.getElementById('download_app_in_ios_tip').style.display = "block";
+ 		document.getElementById('ios_download_area_upper').style.display = "block";
+ 		document.getElementById('ios_download_area_nether').style.display = "block";
+ 		// document.getElementById('download_app_in_tip').setAttribute("onclick",$scope.downloadByType(1));
+ 		// document.getElementById('ios_download_link_upper').setAttribute("onclick",$scope.downloadByType(1));
+ 		// document.getElementById('ios_download_link_nether').setAttribute("onclick",$scope.downloadByType(1));
+ 		
+ 	}else{
+	 	if(phone_type == 2){
+	 		document.getElementById('download_app_in_android_tip').style.display = "block";
+	 		document.getElementById('android_download_area_upper').style.display = "block";
+	 		document.getElementById('android_download_area_nether').style.display = "block";
+	 		// document.getElementById('android_download_link_upper').setAttribute("onclick",$scope.downloadByType(2));
+	 		// document.getElementById('android_download_link_nether').setAttribute("onclick",$scope.downloadByType(2));	 		
+	 	}else if(phone_type ==3){
+	 		document.getElementById('windows_phone_download_area').style.display = "block";		
+	 	}else{
+			document.getElementById('other_download_area').style.display = "block";	
+	 	}
+ 		// var content_in_top_page_paddingTop = 0;
+ 		// content_in_top_page_paddingTop = screenHeight/8+50;
+ 		// document.getElementById('content_in_top_page').style.paddingTop = content_in_top_page_paddingTop+"px";		 	
+ 	} 
+
+}]);
+  
+

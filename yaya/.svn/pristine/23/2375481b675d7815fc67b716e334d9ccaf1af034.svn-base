@@ -1,0 +1,43 @@
+前端开发环境配置
+
+注意，除内网 svn 代码库操作外，所有操作均需要外网环境，推荐使用 cmcc 网络。
+
+=====================================================
+# 安装 node 环境
+http://nodejs.org/
+
+# 安装 ruby 环境
+http://www.rubyinstaller.org/downloads/
+
+## mac 环境
+   安装 xcode
+   安装 macport  https://www.macports.org/install.php
+       	sudo port
+	install ruby
+	(quit ; ruby -v)
+ 
+添加淘宝 rubygems 服务器镜像：
+	
+	gem sources --remove https://rubygems.org/
+	gem sources -a https://ruby.taobao.org/
+
+# 安装 sass 及 compass
+
+	gem install sass
+	gem install compass
+
+=====================================================
+# 安装项目依赖包
+
+	// 注意一定要在前端项目根目录下执行此命令
+	npm install
+
+	bower install
+
+# 运行本地开发环境
+
+	grunt serve
+
+# 项目 build
+
+	grunt build

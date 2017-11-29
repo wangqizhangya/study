@@ -1,0 +1,71 @@
+'use strict';
+angular.module('eqiWebsiteApp')
+	.controller('MainCtrl', ['$location', '$scope','$rootScope','logoName', 'host', function ($location, $scope, $rootScope,logoName, host, rootScope) {
+		$scope.$rootScope = $rootScope;
+		$scope.logoName = logoName;
+		$scope.host = host;
+		$scope.active = $location.path();
+		switch ($location.path()) {
+			case '/contact':
+                $scope.active = '/help'
+                break
+            case '/qa':
+                $scope.active = '/help'
+                break
+            case '/protocol':
+                $scope.active = '/help'
+                break
+           
+		}
+		var system ={  
+		        win : false,  
+		        mac : false,  
+		        x11 : false  
+		        };
+	    var p = navigator.platform;
+	    system.win = p.indexOf("Win") == 0;  
+	    system.mac = p.indexOf("Mac") == 0;  
+	    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);  
+
+		$scope.qrActive = false;
+		
+		$rootScope.bodyClass = 'autoOverflow';
+		$rootScope.headerClass = ''
+		if($scope.active === '/function'){
+			$rootScope.bodyClass = 'hideOverflow'
+			$rootScope.headerClass='hidden'
+		}
+
+		if($scope.active ==='/'){
+		    if(system.win||system.mac||system.x11){
+				$scope.active='/home';
+				$rootScope.headerClass = 'mainheader';
+		    }else{  
+		    	$scope.active='/mobile';//turn to mobile homepage
+		    }    			
+		} 
+
+		
+		$scope.isActive = function(checkActive) {
+			return checkActive === $scope.active;
+		};
+		$scope.setActive = function(route) {			
+			if(route !== '/function'){
+							
+				$rootScope.bodyClass = 'autoOverflow'
+						
+				$rootScope.headerClass = ''
+						
+			}else{
+				
+				$rootScope.bodyClass = 'hideOverflow'
+				
+				$rootScope.headerClass = 'hidden'
+			}
+			$scope.active=route;
+		};
+		$scope.resetQrCode = function(){
+			$scope.qrActive = !$scope.qrActive;
+		};
+
+	}]);

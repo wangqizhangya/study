@@ -1,0 +1,838 @@
+@charset "UTF-8";
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \000034;
+  }
+}
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+
+@media (device-height: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* 兼容iphone4/4s */
+
+@media -sass-debug-info {
+    filename {
+      font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+    }
+
+    line {
+      font-family: \0000310;
+    }
+}
+
+  body,
+  html {
+    font-size: 9px !important;
+  }
+}
+
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* 兼容iphone5 */
+
+@media -sass-debug-info {
+    filename {
+      font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+    }
+
+    line {
+      font-family: \0000315;
+    }
+}
+
+  body,
+  html {
+    font-size: 9px !important;
+  }
+}
+
+@media (device-height: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* 兼容iphone6 */
+
+@media -sass-debug-info {
+    filename {
+      font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+    }
+
+    line {
+      font-family: \0000321;
+    }
+}
+
+  body,
+  html {
+    font-size: 12px !important;
+  }
+}
+
+@media (device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* 兼容iphone6 Plus */
+
+@media -sass-debug-info {
+    filename {
+      font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+    }
+
+    line {
+      font-family: \0000327;
+    }
+}
+
+  body,
+  html {
+    font-size: 14px !important;
+  }
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000331;
+  }
+}
+
+body,
+html {
+  font-family: "Helvetica Neue","Microsoft YaHei", "微软雅黑";
+  color: #333;
+  font-size: 12px;
+  height: 100%;
+  background-color: #fff;
+  -webkit-text-size-adjust: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000342;
+  }
+}
+
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000347;
+  }
+}
+
+.row {
+  margin: 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000350;
+  }
+}
+
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1 {
+  padding: 0;
+  /* padding-right: 15px; */
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000356;
+  }
+}
+
+.glyphicon:empty {
+  width: 1em;
+  margin-right: 8px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000361;
+  }
+}
+
+.app-content-loading {
+  text-align: center;
+  margin: 100px 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000365;
+  }
+}
+
+img.loading {
+  width: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000370;
+  }
+}
+
+.mianPage {
+  background: url(../images/pic_bg@2x.png) no-repeat;
+  background-size: 100%;
+  text-align: center;
+  padding-top: 205px;
+  padding-top: 55vw;
+  background-color: #dd165d;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000379;
+  }
+}
+
+.btn:hover,
+.btn:focus {
+  outline: none;
+  color: #fff;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000383;
+  }
+}
+
+.roulette-wraper {
+  position: relative;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000388;
+  }
+}
+
+.roulette {
+  margin: 0 auto;
+  width: 300px;
+  width: 80vw;
+  height: 300px;
+  height: 80vw;
+  background-color: #dd165d;
+  background-image: url("../images/wheel.png");
+  background-size: 100%;
+  border-radius: 300px;
+  border-radius: 80vw;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003101;
+  }
+}
+
+.spinner-wraper {
+  position: absolute;
+  padding: 0;
+  width: 80px;
+  width: 21.3vw;
+  height: 80px;
+  height: 21.3vw;
+  top: 113px;
+  top: 30vw;
+  left: 150px;
+  left: 40vw;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003114;
+  }
+}
+
+.spinner {
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: url("../images/go.png") no-repeat;
+  background-size: 100%;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003127;
+  }
+}
+
+.spinner-wraper .pointer {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -28px;
+  left: 30px;
+  left: 7.6vw;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 30px solid #dd165d;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003139;
+  }
+}
+
+.desc-title,
+.desc-wraper {
+  color: #fff6cc;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003143;
+  }
+}
+
+.desc-title {
+  margin-top: 20px;
+  font-size: 1.7rem;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003147;
+  }
+}
+
+.desc-wraper {
+  background: #a90e40;
+  width: 300px;
+  width: 80vw;
+  font-size: 1.1rem;
+  line-height: 2;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003157;
+  }
+}
+
+.desc-wraper.last {
+  padding-bottom: 20px;
+  text-align: justify;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003161;
+  }
+}
+
+.footer {
+  margin-top: 10px;
+  position: relative;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003164;
+  }
+}
+
+.footer .footer-bg {
+  width: 100%;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003167;
+  }
+}
+
+.footer .bottom-button {
+  position: absolute;
+  position: absolute;
+  top: 0;
+  width: 73px;
+  width: 19.5vw;
+  height: 73px;
+  height: 19.5vw;
+  left: 40vw;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003178;
+  }
+}
+
+.modal-back {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003185;
+  }
+}
+
+.modal-back .close-btn {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: url(../images/close-btn.png) no-repeat;
+  background-size: 100%;
+  top: 160px;
+  right: 80px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003194;
+  }
+}
+
+.modal-back .close-btn.right {
+  top: 20px;
+  right: 20px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003198;
+  }
+}
+
+.modal-back .modal-pannel {
+  margin-top: 100px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003201;
+  }
+}
+
+.modal-back .modal-pannel.prize {
+  background: url(../images/prize_pic.png) no-repeat;
+  background-size: 100%;
+  width: 225px;
+  width: 60vw;
+  margin: 100px auto;
+  margin-top: 200px;
+  padding: 228px 18px 37px 18px;
+  padding: 61vw 5vw 10vw 5vw;
+  color: #c6357f;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003212;
+  }
+}
+
+.modal-back .modal-pannel.thanks {
+  margin-top: 200px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003214;
+  }
+}
+
+.modal-back .modal-pannel.thanks img {
+  width: 188px;
+  width: 50vw;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003219;
+  }
+}
+
+.modal-back .modal-pannel.rule {
+  background: url(../images/rule_pic.png) no-repeat;
+  background-size: 100%;
+  width: 335px;
+  width: 90vw;
+  margin: 60px auto;
+  padding: 55px 10px 40px 10px;
+  padding: 14vw 3vw 12vw 3vw;
+  color: #fff;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003228;
+  }
+}
+
+.modal-back .modal-pannel.rule p {
+  line-height: 2.1rem;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003235;
+  }
+}
+
+.toaster-wraper {
+  position: fixed;
+  bottom: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003242;
+  }
+}
+
+.toaster {
+  width: 225px;
+  width: 60vw;
+  color: #fff;
+  padding: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003252;
+  }
+}
+
+.modal-content {
+  border-radius: 12px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003255;
+  }
+}
+
+.modal-dialog {
+  width: 90%;
+  top: 200px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003260;
+  }
+}
+
+.modal-dialog .modal-header {
+  padding: 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003262;
+  }
+}
+
+.modal-dialog .modal-header.noLine {
+  border-bottom: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003266;
+  }
+}
+
+.modal-dialog .modal-body {
+  text-align: center;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003269;
+  }
+}
+
+.modal-dialog .modal-footer {
+  padding: 0;
+  border-top: 1px solid #ededed;
+  margin-top: 0;
+  text-align: center;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003276;
+  }
+}
+
+.btn {
+  padding: 10px 15vw;
+  font-size: 1.4rem;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003281;
+  }
+}
+
+.modal-footer .btn + .btn {
+  margin-left: 0px;
+  margin-bottom: 0;
+  border-left: 1px solid #ededed;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/cmcc\/git\/yqx\/markting\/hebangong-WheelofFortune\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003286;
+  }
+}
+
+.btn-default {
+  color: #0076ff;
+  background-color: #fff;
+  border: none;
+}

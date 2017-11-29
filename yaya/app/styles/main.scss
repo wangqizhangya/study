@@ -1,0 +1,293 @@
+@charset "utf-8";
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+
+@media (device-height : 480px ) and (-webkit-min-device-pixel-ratio: 2 ){ /* 兼容iphone4/4s */
+  body,html {
+    font-size:9px !important;
+  }
+
+}@media (device-height : 568px ) and (-webkit-min-device-pixel-ratio: 2 ){ /* 兼容iphone5 */
+ body,html {
+    font-size:9px !important;
+  }
+
+}
+@media (device-height : 667px ) and (-webkit-min-device-pixel-ratio: 2 ){ /* 兼容iphone6 */
+  body,html {
+    font-size:12px !important;
+  }
+
+}
+@media (device-height : 736px ) and (-webkit-min-device-pixel-ratio: 2 ){ /* 兼容iphone6 Plus */
+    body,html {
+    font-size:14px !important;
+  }
+}
+ body,html {
+    font-family:"Helvetica Neue","Microsoft YaHei", "微软雅黑";
+    color:#333;
+    font-size:12px;
+    height:100%;
+    background-color:#fff;
+    -webkit-text-size-adjust: none;
+  }
+
+.background{
+}
+.container{
+   padding-left: 30px;
+   padding-right: 30px;
+}
+
+.row{
+   margin:0;
+}
+.col-xs-12, .col-sm-12, .col-md-12, .col-lg-12, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1 {
+
+    padding: 0;
+    /* padding-right: 15px; */
+}
+
+.glyphicon:empty {
+    width: 1em;
+    margin-right: 8px;
+}
+
+.app-content-loading{
+    text-align:center;
+    margin: 100px 0;
+}
+img.loading{
+    width:50px;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+.mianPage {
+  background: url(../images/pic_bg@2x.png) no-repeat;
+  background-size: 100%;
+  text-align:center;
+  padding-top:205px;
+  padding-top:55vw;
+  background-color:#dd165d;
+}
+
+.btn:hover,.btn:focus {
+    outline: none;
+    color:#fff;
+}
+.roulette-wraper{
+  position:relative;
+}
+
+
+.roulette {
+    //position: absolute;
+    margin: 0 auto;
+    width: 300px;
+    width:80vw;
+    height: 300px;
+    height:80vw;
+    background-color: #dd165d;
+    background-image: url('../images/wheel.png');
+    background-size:100%;
+    border-radius: 300px;
+    border-radius:80vw;
+}
+.spinner-wraper{
+    position: absolute;
+    padding:0;
+    width: 80px;
+    width: 21.3vw;
+    height: 80px;
+    height: 21.3vw;
+    top: 113px;
+    top: 30vw;
+    left: 150px;
+    left: 40vw;
+}
+
+.spinner {
+    position: absolute;
+    cursor: pointer;
+    border: none;
+    //position: absolute;
+    width:100%;
+    height:100%;
+    border-radius: 100%;
+    //z-index: 1000;
+    background: url('../images/go.png') no-repeat;
+    background-size:100%;
+}
+
+.spinner-wraper .pointer {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -28px;
+    left: 30px;
+    left: 7.6vw;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid #dd165d;
+}
+
+.desc-title,.desc-wraper{
+    color:#fff6cc;
+
+}
+.desc-title{
+    margin-top:20px;
+    font-size:1.7rem;
+}
+.desc-wraper{
+    background:#a90e40;
+    width:300px;
+    width:80vw;
+    font-size:1.1rem;
+    line-height:2;
+    padding:10px;
+    margin-top:20px;
+    text-align:left;
+}
+.desc-wraper.last{
+    padding-bottom:20px;
+    text-align: justify;
+}
+.footer{
+    margin-top:10px;
+    position:relative;
+    .footer-bg{
+       width:100%;
+    }
+    .bottom-button{
+        position:absolute;
+        position: absolute;
+        top: 0;
+        width:73px;
+        width: 19.5vw;
+        height: 73px;
+        height: 19.5vw;
+        left: 40vw;
+    }
+}
+.modal-back{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:rgba(0,0,0,.7);
+    .close-btn{
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background: url(../images/close-btn.png) no-repeat;
+        background-size: 100%;
+        top: 160px;
+        right: 80px;
+    }
+    .close-btn.right{
+        top: 20px;
+        right: 20px;
+    }
+    .modal-pannel{
+        margin-top:100px;
+    }
+    .modal-pannel.prize{
+        background: url(../images/prize_pic.png) no-repeat;
+        background-size: 100%;
+        width:225px;
+        width:60vw;
+        margin: 100px auto;
+        margin-top:200px;
+        padding:228px 18px 37px 18px;
+        padding:61vw 5vw 10vw 5vw;
+        color:#c6357f;
+    }
+    .modal-pannel.thanks{
+        margin-top:200px;
+        img{
+            width:188px;
+            width:50vw;
+        }
+    }
+    .modal-pannel.rule{
+        background: url(../images/rule_pic.png) no-repeat;
+        background-size: 100%;
+        width:335px;
+        width:90vw;
+        margin: 60px auto;
+        padding:55px 10px 40px 10px;
+        padding:14vw 3vw 12vw 3vw;
+        color:#fff;
+        p {
+            line-height: 2.1rem;
+            margin-bottom: 0;
+            text-align: left;
+        }
+    }
+}
+.toaster-wraper{
+    position: fixed;
+    bottom:100px;
+    width:100%;
+    text-align:center;
+}
+
+.toaster{
+    width: 225px;
+    width: 60vw;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+}
+.modal-content {
+    border-radius: 12px;
+}
+.modal-dialog{
+    width: 90%;
+    top: 200px;
+    font-size: 1.4rem;
+    color: #333;
+    .modal-header {
+        padding:0 ;
+        &.noLine{
+          border-bottom:none;
+        }
+    }
+    .modal-body {
+        text-align:center;
+    }
+    .modal-footer{
+      padding: 0;
+      border-top:1px solid #ededed;
+      margin-top: 0;
+      text-align:center;
+    }
+}
+.btn{
+  padding:10px 15vw;
+  font-size:1.4rem;
+
+}
+.modal-footer .btn + .btn {
+    margin-left: 0px;
+    margin-bottom: 0;
+    border-left:1px solid #ededed;
+}
+.btn-default{
+    color: #0076ff;
+    background-color: #fff;
+    border: none;
+}
+
+
+
